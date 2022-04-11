@@ -1,22 +1,38 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import './Calendar.css'
 import {
-  startOfWeek,
-  endOfWeek,
-  startOfMonth,
-  endOfMonth,
-  eachDayOfInterval,
-  eachWeekOfInterval,
-  format as formatFn,
-} from 'date-fns'
+  getDays,
+  getDayNumber,
+  getWeekDays,
+  getWeeks,
+} from '../utils/date-fnsInfo'
+import Day from './Day'
 
 function Calendar() {
   const now = new Date()
-  const getDayNumber = (date = now) => formatFn(date, 'd')
-  console.log(getDayNumber())
-  const greeting = 'Calendar'
+  const date = now
+  const weekDays = getWeekDays()
+  const weeks = useMemo(() => getWeeks(date), [date])
 
-  return <h1>{}</h1>
+  return (
+    <h1>
+      Calendar
+      <div className="days-of-week">
+        {weekDays.map((day) => (
+          <div key={day}>{day}</div>
+        ))}
+      </div>
+      <div className="weeks">
+        {weeks.map((week) => (
+          <div key={week}>
+            {getDays(week).map((day) => (
+              <Day key={day} />
+            ))}
+          </div>
+        ))}
+      </div>
+    </h1>
+  )
 }
 
 export default Calendar
