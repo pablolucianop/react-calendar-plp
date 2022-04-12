@@ -20,7 +20,9 @@ function Calendar() {
         Calendar
         <div className="days-of-week columns7">
           {weekDays.map((day) => (
-            <div key={day}>{day}</div>
+            <div className="day-of-week" key={day}>
+              {day}
+            </div>
           ))}
         </div>
         <div className="weeks">
