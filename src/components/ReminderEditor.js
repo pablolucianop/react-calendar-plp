@@ -60,7 +60,11 @@ function ReminderEditor(state) {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formCity">
             <Form.Label>City</Form.Label>
-            <Form.Control type="text" placeholder="Enter City" />
+            <Form.Control
+              type="text"
+              placeholder="Enter City"
+              onChange={(e) => setCity(e.target.value)}
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formCity">
             <Form.Label>Color</Form.Label>
@@ -84,9 +88,4 @@ function ReminderEditor(state) {
   )
 }
 
-const mapStateToProps = (state) => ({
-  reminder: state.reminder,
-  // return { messages: state }
-})
-
-export default connect(mapStateToProps)(ReminderEditor)
+export default ReminderEditor
