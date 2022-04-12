@@ -19,13 +19,7 @@ const Week = (props) => {
   const now = new Date()
 
   return (
-    <div
-      className="Week"
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-      }}
-    >
+    <div className="columns7">
       {days.map((day) => (
         <Day
           key={day}

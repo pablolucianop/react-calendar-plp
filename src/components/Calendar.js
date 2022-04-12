@@ -15,19 +15,21 @@ function Calendar() {
   const weeks = useMemo(() => getWeeks(date), [date])
 
   return (
-    <h1>
-      Calendar
-      <div className="days-of-week">
-        {weekDays.map((day) => (
-          <div key={day}>{day}</div>
-        ))}
-      </div>
-      <div className="weeks">
-        {weeks.map((week) => (
-          <Week key={week} date={date} week={week} />
-        ))}
-      </div>
-    </h1>
+    <div className="grid-container">
+      <h1>
+        Calendar
+        <div className="days-of-week columns7">
+          {weekDays.map((day) => (
+            <div key={day}>{day}</div>
+          ))}
+        </div>
+        <div className="weeks">
+          {weeks.map((week) => (
+            <Week key={week} date={date} week={week} />
+          ))}
+        </div>
+      </h1>
+    </div>
   )
 }
 

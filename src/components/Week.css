@@ -1,3 +1,7 @@
-.Week {
+.columns7 {
   background-color: burlywood;
+  width: 100%;
+  display: grid;
+  background-color: chartreuse;
+  grid-template-columns: 20% 20% 20% 20% 20% 20% 20%;
 }
