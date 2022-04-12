@@ -16,7 +16,7 @@ function Calendar() {
 
   return (
     <div className="grid-container">
-      <h1>
+      <div>
         Calendar
         <div className="days-of-week columns7">
           {weekDays.map((day) => (
@@ -28,7 +28,7 @@ function Calendar() {
             <Week key={week} date={date} week={week} />
           ))}
         </div>
-      </h1>
+      </div>
     </div>
   )
 }
