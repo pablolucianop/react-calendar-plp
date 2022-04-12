@@ -6,7 +6,7 @@ import Modal from 'react-bootstrap/Modal'
 import { CirclePicker } from 'react-color'
 function ReminderEditor() {
   const [show, setShow] = useState(false)
-  const [color, setColor] = useState('#ff0000')
+  const [color, setColor] = useState('#ffffff')
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
 
