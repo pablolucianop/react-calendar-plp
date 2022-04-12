@@ -2,6 +2,8 @@ import React, { useCallback, useState } from 'react'
 import { getDayNumber } from '../utils/date-fnsInfo'
 import Card from 'react-bootstrap/Card'
 import './Day.css'
+import AddReminder from './AddReminder'
+import Reminder from './Reminder.js'
 
 const Day = ({ day, isWeekend, isToday, isThisMonth }) => {
   // create an async await function that takes a string, and a date formates mm/dd/yyyy as parameters, and ask Open Weather Map for the weather for that date on the city
@@ -27,6 +29,8 @@ const Day = ({ day, isWeekend, isToday, isThisMonth }) => {
         `}
     >
       {getDayNumber(day)}
+      <Reminder />
+      <AddReminder />
     </div>
   )
 }

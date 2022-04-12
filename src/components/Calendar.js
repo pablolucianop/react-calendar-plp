@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import './Calendar.css'
+
 import {
   getDays,
   getDayNumber,
@@ -7,6 +8,8 @@ import {
   getWeeks,
 } from '../utils/date-fnsInfo'
 import Week from './Week'
+import axios from 'axios'
+import ReminderEditor from './ReminderEditor'
 
 function Calendar() {
   const now = new Date()
@@ -14,10 +17,24 @@ function Calendar() {
   const weekDays = getWeekDays()
   const weeks = useMemo(() => getWeeks(date), [date])
 
+  const getResponse = async () => {
+    try {
+      const response = await axios.get('url')
+    } catch (err) {
+      console.log('err')
+    }
+  }
+  console.log(getResponse)
+
+  //pro.openweathermap.org/data/2.5/forecast/climate?lat={lat}&lon={lon}&appid={API key}
+  //pro.openweathermap.org/data/2.5/forecast/climate?q=Rosario&appid=88311788ed96ee764097bb269c07c5f7
+  //api.openweathermap.org/data/2.5/weather?q=Rosario&units=imperial&appid=88311788ed96ee764097bb269c07c5f7
+
   return (
     <div className="grid-container">
       <div>
         Calendar
+        <ReminderEditor />
         <div className="days-of-week columns7">
           {weekDays.map((day) => (
             <div className="day-of-week" key={day}>
