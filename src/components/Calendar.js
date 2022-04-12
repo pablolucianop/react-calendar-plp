@@ -6,7 +6,7 @@ import {
   getWeekDays,
   getWeeks,
 } from '../utils/date-fnsInfo'
-import Day from './Day'
+import Week from './Week'
 
 function Calendar() {
   const now = new Date()
@@ -24,11 +24,7 @@ function Calendar() {
       </div>
       <div className="weeks">
         {weeks.map((week) => (
-          <div key={week}>
-            {getDays(week).map((day) => (
-              <Day key={day} />
-            ))}
-          </div>
+          <Week key={week} date={date} week={week} />
         ))}
       </div>
     </h1>
