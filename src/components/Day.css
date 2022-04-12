@@ -1,6 +1,9 @@
 .day {
   border: #b5b5b5 1px solid;
   background-color: #ffffff;
+  height: 20vh;
+  font-size: small;
+  font-weight: bold;
 }
 
 .today-background {

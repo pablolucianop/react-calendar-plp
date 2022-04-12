@@ -8,9 +8,9 @@ const Day = ({ day, isWeekend, isToday, isThisMonth }) => {
     <div
       className={`day
                  ${isToday && 'today-background'}
-                 ${isThisMonth ? 'abled-text' : 'disabled-text'}
-                 ${isWeekend && 'accent-Color-text'}
                  ${isWeekend && 'gray-background'}
+                 ${isWeekend & isThisMonth ? 'accent-Color-text' : ''}
+                 ${!isThisMonth && 'disabled-text'}
         `}
     >
       {getDayNumber(day)}
