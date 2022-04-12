@@ -7,8 +7,25 @@ import { CirclePicker } from 'react-color'
 function ReminderEditor() {
   const [show, setShow] = useState(false)
   const [color, setColor] = useState('#ffffff')
+  const [name, setName] = useState('')
+  const [city, setCity] = useState('')
+  const [date, setDate] = useState('')
+  const [hour, setHour] = useState('')
+  const [recodatory, setRecordatory] = useState({})
+
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+  const handleAdd = (e) => {
+    e.preventDefault()
+    setRecordatory({
+      color: color,
+      name: name,
+      city: city,
+      date: date,
+      hour: hour,
+    })
+    console.log('recodatory', recodatory)
+  }
 
   return (
     <>
@@ -28,11 +45,15 @@ function ReminderEditor() {
             >
               Reminder
             </Form.Label>
-            <Form.Control type="email" placeholder="Enter Reminder" />
+            <Form.Control
+              type="text"
+              placeholder="Enter Reminder"
+              onChange={(e) => setName(e.target.value)}
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formCity">
             <Form.Label>City</Form.Label>
-            <Form.Control type="email" placeholder="Enter City" />
+            <Form.Control type="text" placeholder="Enter City" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formCity">
             <Form.Label>Color</Form.Label>
@@ -43,12 +64,13 @@ function ReminderEditor() {
               }}
             />
           </Form.Group>
-          <Button variant="primary" type="Add">
+          <Button variant="primary" type="Add" onClick={handleAdd}>
             Add
           </Button>
-          <Button variant="secondary" type="Cancel">
+          <Button variant="secondary" type="Cancel" onClick={console.log(name)}>
             Cancel
           </Button>{' '}
+          {console.log('name', name)}
         </Form>
       </Modal>
     </>
