@@ -13,7 +13,10 @@ function ReminderEditor() {
   const [hour, setHour] = useState('')
   const [recodatory, setRecordatory] = useState({})
 
-  const handleClose = () => setShow(false)
+  const handleClose = (e) => {
+    e.preventDefault()
+    setShow(false)
+  }
   const handleShow = () => setShow(true)
   const handleAdd = (e) => {
     e.preventDefault()
@@ -24,6 +27,7 @@ function ReminderEditor() {
       date: date,
       hour: hour,
     })
+    handleClose(e)
     console.log('recodatory', recodatory)
   }
 
@@ -67,7 +71,7 @@ function ReminderEditor() {
           <Button variant="primary" type="Add" onClick={handleAdd}>
             Add
           </Button>
-          <Button variant="secondary" type="Cancel" onClick={console.log(name)}>
+          <Button variant="secondary" type="Cancel" onClick={handleClose}>
             Cancel
           </Button>{' '}
           {console.log('name', name)}

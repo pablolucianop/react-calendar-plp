@@ -34,8 +34,7 @@ function Calendar() {
   return (
     <div className="grid-container">
       <div>
-        Calendar
-        <Button variant="primary">Primary</Button> <ReminderEditor />
+        <ReminderEditor />
         <div className="days-of-week columns7">
           {weekDays.map((day) => (
             <div className="day-of-week" key={day}>
