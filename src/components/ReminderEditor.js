@@ -17,14 +17,17 @@ function ReminderEditor() {
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Form
-          style={{
-            backgroundColor: color,
-            transition: 'ease all 500ms',
-          }}
-        >
+        <Form>
           <Form.Group className="mb-3" controlId="formBasicReminder">
-            <Form.Label>Reminder</Form.Label>
+            <Form.Label
+              style={{
+                backgroundColor: color,
+                transition: 'ease all 500ms',
+                width: '100%',
+              }}
+            >
+              Reminder
+            </Form.Label>
             <Form.Control type="email" placeholder="Enter Reminder" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formCity">
