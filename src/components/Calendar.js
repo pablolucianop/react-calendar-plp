@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react'
+import Button from 'react-bootstrap/Button'
 import './Calendar.css'
 
 import {
@@ -34,7 +35,7 @@ function Calendar() {
     <div className="grid-container">
       <div>
         Calendar
-        <ReminderEditor />
+        <Button variant="primary">Primary</Button> <ReminderEditor />
         <div className="days-of-week columns7">
           {weekDays.map((day) => (
             <div className="day-of-week" key={day}>

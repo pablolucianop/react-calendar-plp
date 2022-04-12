@@ -3,7 +3,7 @@ import React from 'react'
 import './AddReminder.css'
 
 const AddReminder = () => {
-  return <div>Add Reminder</div>
+  return <div>+</div>
 }
 
 export default AddReminder
