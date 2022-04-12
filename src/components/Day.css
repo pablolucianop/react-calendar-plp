@@ -1,4 +1,20 @@
 .day {
   border: darkblue 1px solid;
-  background-color: darkgoldenrod;
+  background-color: #ffffff;
+}
+
+.today-background {
+  background-color: #79b9f6;
+}
+.abled-text {
+  color: black;
+}
+.disabled-text {
+  color: #a3a3a3;
+}
+.accent-Color-text {
+  color: #2f74b5;
+}
+.gray-background {
+  background-color: #f2f2f2;
 }
