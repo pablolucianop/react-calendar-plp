@@ -21,6 +21,7 @@ function App() {
   const messageReducer = (state = [], action) => {
     switch (action.type) {
       case ADD:
+        console.log('action', action)
         return [...state, action.message]
       default:
         return state

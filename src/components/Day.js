@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { getDayNumber } from '../utils/date-fnsInfo'
-
+import ReminderEditor from './ReminderEditor'
 import './Day.css'
 import AddReminder from './AddReminder'
 import Reminder from './Reminder.js'
@@ -28,7 +28,7 @@ const Day = ({ day, isWeekend, isToday, isThisMonth }) => {
     >
       {getDayNumber(day)}
       <Reminder />
-      <AddReminder />
+      <ReminderEditor />
     </div>
   )
 }

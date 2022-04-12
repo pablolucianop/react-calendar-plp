@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import './ReminderEditor.css'
+import { connect } from 'react-redux'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { CirclePicker } from 'react-color'
-function ReminderEditor() {
+
+function ReminderEditor(state) {
   const [show, setShow] = useState(false)
   const [color, setColor] = useState('#ffffff')
   const [name, setName] = useState('')
@@ -27,14 +29,15 @@ function ReminderEditor() {
       date: date,
       hour: hour,
     })
-    handleClose(e)
+
+    // handleClose(e)
     console.log('recodatory', recodatory)
   }
 
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+        +
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -72,7 +75,7 @@ function ReminderEditor() {
             Add
           </Button>
           <Button variant="secondary" type="Cancel" onClick={handleClose}>
-            Cancel
+            Cancel {state[0]}
           </Button>{' '}
           {console.log('name', name)}
         </Form>
@@ -81,4 +84,9 @@ function ReminderEditor() {
   )
 }
 
-export default ReminderEditor
+const mapStateToProps = (state) => ({
+  reminder: state.reminder,
+  // return { messages: state }
+})
+
+export default connect(mapStateToProps)(ReminderEditor)

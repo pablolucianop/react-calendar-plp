@@ -10,7 +10,6 @@ import {
 } from '../utils/date-fnsInfo'
 import Week from './Week'
 import axios from 'axios'
-import ReminderEditor from './ReminderEditor'
 
 function Calendar() {
   const now = new Date()
@@ -34,7 +33,6 @@ function Calendar() {
   return (
     <div className="grid-container">
       <div>
-        <ReminderEditor />
         <div className="days-of-week columns7">
           {weekDays.map((day) => (
             <div className="day-of-week" key={day}>
