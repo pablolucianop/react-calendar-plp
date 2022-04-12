@@ -43,13 +43,12 @@ function ReminderEditor() {
               }}
             />
           </Form.Group>
-
-          <Button variant="primary" type="submit">
-            Submit
+          <Button variant="primary" type="Add">
+            Add
           </Button>
-          <Button variant="primary" type="submit">
-            cancel
-          </Button>
+          <Button variant="secondary" type="Cancel">
+            Cancel
+          </Button>{' '}
         </Form>
       </Modal>
     </>
