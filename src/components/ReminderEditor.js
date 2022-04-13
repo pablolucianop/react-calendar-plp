@@ -91,7 +91,7 @@ function ReminderEditor(props) {
             }}
           />
         </Form.Group>
-        {/* {props.messages} */}
+        {console.log('props.messages', props.messages)}
         <Button variant="primary" type="Add" onClick={handleAdd}>
           Add
         </Button>
