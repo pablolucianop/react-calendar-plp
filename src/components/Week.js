@@ -28,6 +28,7 @@ const Week = (props) => {
           isWeekend={isWeekend(day)}
           isToday={isSameDay(day, now)}
           isThisMonth={isSameMonth(day, date)}
+          handleShow={props.handleShow}
         />
       ))}
     </div>

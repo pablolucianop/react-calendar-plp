@@ -5,8 +5,16 @@ import './Day.css'
 import { connect } from 'react-redux'
 import AddReminder from './AddReminder'
 import Reminder from './Reminder.js'
+import Button from 'react-bootstrap/Button'
 
-const Day = ({ day, isWeekend, isToday, isThisMonth, messages }) => {
+const Day = ({
+  day,
+  isWeekend,
+  isToday,
+  isThisMonth,
+  messages,
+  handleShow,
+}) => {
   const getWeatherFromCityInDate = async (city, date) => {
     const response = await fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}&units=imperial&date=${date}`
@@ -16,7 +24,7 @@ const Day = ({ day, isWeekend, isToday, isThisMonth, messages }) => {
   }
   //   const ww = getWeatherFromCityInDate('rosario', '05/11/2022')
 
-  //   console.log('ww', ww)
+  console.log('handleShow', handleShow)
 
   return (
     <div
@@ -39,6 +47,9 @@ const Day = ({ day, isWeekend, isToday, isThisMonth, messages }) => {
             city={rem.city}
             color={rem.color}
           />
+          <Button variant="primary" onClick={handleShow}>
+            +
+          </Button>
         </div>
       ))}
     </div>

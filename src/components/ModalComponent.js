@@ -10,17 +10,18 @@ import Day from './Day'
 // import DatePicker from './DatePicker'
 
 function ModalComponent(props) {
-  const [show, setShow] = useState(false)
+  // const [show, setShow] = useState(false)
   const [color, setColor] = useState('#ffffff')
   const [reminderText, setReminderText] = useState('')
   const [city, setCity] = useState('')
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
   const [recodatory, setRecordatory] = useState({})
-
+  const show = props.show
+  const setShow = props.setShow
   const handleClose = (e) => {
     // e.preventDefault()
-    setShow(false)
+    props.setShow(false)
   }
   const handleDispa = (e) => {
     e.preventDefault()
