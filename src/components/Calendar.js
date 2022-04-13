@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 import Button from 'react-bootstrap/Button'
 import './Calendar.css'
 import ReminderEditor from './ReminderEditor'
+import ModalComponent from './ModalComponent'
 
 import {
   getDays,
@@ -49,7 +50,8 @@ function Calendar() {
           </div>
         </div>
       </div>
-      <ReminderEditor test={'test'} />
+      <ModalComponent test={'test'} />
+      {/* <ReminderEditor test={'test'} /> */}
     </div>
   )
 }

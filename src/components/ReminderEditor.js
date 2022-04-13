@@ -55,74 +55,71 @@ function ReminderEditor(props) {
       <Button variant="primary" onClick={handleShow}>
         +
       </Button>
-
-      <Modal show={show} onHide={handleClose}>
-        {/* <Form> */}
-        <Form.Group className="mb-3" controlId="formBasicReminder">
-          <Form.Label
-            style={{
-              backgroundColor: color,
-              transition: 'ease all 500ms',
-              width: '100%',
-              fontWeight: 700,
-            }}
-          >
-            Reminder
-          </Form.Label>
-          <Form.Control
-            defaultValue={'email@example.com'}
-            type="text"
-            placeholder="Enter Reminder"
-            maxLength="30"
-            onChange={(e) => setReminderText(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formCity">
-          <Form.Label>City</Form.Label>
-          <Form.Control
-            defaultValue={'email@example.com'}
-            type="text"
-            placeholder="Enter City"
-            maxLength="30"
-            onChange={(e) => setCity(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formCity">
-          <Form.Label>Date and Time</Form.Label>
-          <Form.Control
-            type="date"
-            defaultValue={'2000-11-11'}
-            onChange={(e) => setDate(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formCity">
-          <Form.Label>Date and Time</Form.Label>
-          <Form.Control
-            type="time"
-            // placeholder="Enter City"
-            defaultValue={'--:--'}
-            onChange={(e) => setTime(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formCity">
-          <Form.Label>Color</Form.Label>
-          <CirclePicker
-            color={color}
-            onChangeComplete={(color) => {
-              setColor(color.hex)
-            }}
-          />
-        </Form.Group>
-        {console.log('props.messages', props.messages)}
-        <Button variant="primary" type="Add" onClick={handleAdd}>
-          Add
-        </Button>
-        <Button variant="secondary" type="Cancel" onClick={handleClose}>
-          Cancel
-        </Button>{' '}
-        {console.log('props', props)}
-        {/* </Form> */}
-      </Modal>
+      {/* <Form> */}
+      <Form.Group className="mb-3" controlId="formBasicReminder">
+        <Form.Label
+          style={{
+            backgroundColor: color,
+            transition: 'ease all 500ms',
+            width: '100%',
+            fontWeight: 700,
+          }}
+        >
+          Reminder
+        </Form.Label>
+        <Form.Control
+          defaultValue={'email@example.com'}
+          type="text"
+          placeholder="Enter Reminder"
+          maxLength="30"
+          onChange={(e) => setReminderText(e.target.value)}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formCity">
+        <Form.Label>City</Form.Label>
+        <Form.Control
+          defaultValue={'email@example.com'}
+          type="text"
+          placeholder="Enter City"
+          maxLength="30"
+          onChange={(e) => setCity(e.target.value)}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formCity">
+        <Form.Label>Date and Time</Form.Label>
+        <Form.Control
+          type="date"
+          defaultValue={'2000-11-11'}
+          onChange={(e) => setDate(e.target.value)}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formCity">
+        <Form.Label>Date and Time</Form.Label>
+        <Form.Control
+          type="time"
+          // placeholder="Enter City"
+          defaultValue={'--:--'}
+          onChange={(e) => setTime(e.target.value)}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formCity">
+        <Form.Label>Color</Form.Label>
+        <CirclePicker
+          color={color}
+          onChangeComplete={(color) => {
+            setColor(color.hex)
+          }}
+        />
+      </Form.Group>
+      {console.log('props.messages', props.messages)}
+      <Button variant="primary" type="Add" onClick={handleAdd}>
+        Add
+      </Button>
+      <Button variant="secondary" type="Cancel" onClick={handleClose}>
+        Cancel
+      </Button>{' '}
+      {console.log('props', props)}
+      {/* </Form> */}
     </>
   )
 }
