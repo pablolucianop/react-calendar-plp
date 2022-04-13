@@ -19,7 +19,7 @@ function ModalComponent(props) {
   const [recodatory, setRecordatory] = useState({})
 
   const handleClose = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     setShow(false)
   }
   const handleDispa = (e) => {
