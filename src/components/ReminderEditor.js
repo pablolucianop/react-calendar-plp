@@ -100,7 +100,7 @@ function ReminderEditor(props) {
           <Form.Control
             type="time"
             // placeholder="Enter City"
-            defaultValue={'11:11'}
+            defaultValue={'--:--'}
             onChange={(e) => setTime(e.target.value)}
           />
         </Form.Group>
