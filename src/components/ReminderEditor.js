@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { CirclePicker } from 'react-color'
-
+import DatePicker from './DatePicker'
 function ReminderEditor(state) {
   const [show, setShow] = useState(false)
   const [color, setColor] = useState('#ffffff')
@@ -74,6 +74,10 @@ function ReminderEditor(state) {
                 setColor(color.hex)
               }}
             />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formCity">
+            <Form.Label>Color</Form.Label>
+            {show && <DatePicker />}
           </Form.Group>
           <Button variant="primary" type="Add" onClick={handleAdd}>
             Add
