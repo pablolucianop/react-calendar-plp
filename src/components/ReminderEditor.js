@@ -64,6 +64,7 @@ function ReminderEditor(props) {
               backgroundColor: color,
               transition: 'ease all 500ms',
               width: '100%',
+              fontWeight: 700,
             }}
           >
             Reminder
@@ -71,6 +72,7 @@ function ReminderEditor(props) {
           <Form.Control
             type="text"
             placeholder="Enter Reminder"
+            maxLength="30"
             onChange={(e) => setReminderText(e.target.value)}
           />
         </Form.Group>
@@ -79,6 +81,7 @@ function ReminderEditor(props) {
           <Form.Control
             type="text"
             placeholder="Enter City"
+            maxLength="30"
             onChange={(e) => setCity(e.target.value)}
           />
         </Form.Group>

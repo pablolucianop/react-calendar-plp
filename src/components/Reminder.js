@@ -30,7 +30,13 @@ import './Reminder.css'
 
 const Reminder = ({ city, reminderText, date, color }) => {
   return (
-    <div className="reminder-container">
+    <div
+      className="reminder-container"
+      style={{
+        backgroundColor: color,
+        transition: 'ease all 500ms',
+      }}
+    >
       {/* Reminder */}
       {/* <div className="close">X</div> */}
       {/* {mainWeatherData}
