@@ -42,7 +42,7 @@ function ReminderEditor(props) {
       hour: hour,
     }
     props.dispatch({ type: 'ADD', message: remi })
-    // handleClose(e)
+    handleClose(e)
     console.log('recodatory', recodatory)
   }
 
@@ -79,6 +79,10 @@ function ReminderEditor(props) {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCity">
+          <Form.Label>Date and Time</Form.Label>
+          {show && <DatePicker />}
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formCity">
           <Form.Label>Color</Form.Label>
           <CirclePicker
             color={color}
@@ -87,16 +91,9 @@ function ReminderEditor(props) {
             }}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formCity">
-          <Form.Label>Color</Form.Label>
-          {show && <DatePicker />}
-        </Form.Group>
         {/* {props.messages} */}
         <Button variant="primary" type="Add" onClick={handleAdd}>
           Add
-        </Button>
-        <Button variant="primary" type="Add" onClick={handleDispa}>
-          dispa
         </Button>
         <Button variant="secondary" type="Cancel" onClick={handleClose}>
           Cancel

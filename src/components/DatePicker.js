@@ -10,7 +10,7 @@ export default function DatePicker() {
     <Stack component="form" noValidate spacing={3}>
       <TextField
         id="datetime-local"
-        label="Custom input"
+        label="choose here"
         type="datetime-local"
         defaultValue="2017-05-24T10:30"
         sx={{ width: 250 }}
