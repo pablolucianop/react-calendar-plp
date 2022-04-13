@@ -33,7 +33,12 @@ const Day = ({ day, isWeekend, isToday, isThisMonth, messages }) => {
       {/* <Reminder /> */}
       {messages.map((rem) => (
         <div className="-" key={rem.key}>
-          {rem.city}
+          <Reminder
+            reminderText={rem.reminderText}
+            date={rem.date}
+            city={rem.city}
+            color={rem.color}
+          />
         </div>
       ))}
     </div>

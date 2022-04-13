@@ -15,6 +15,8 @@ const addMessage = (message) => {
   }
 }
 
+console.log('datero', Date.now())
+
 // const messageReducer = () => {
 //   return {
 //     messages: [1, 2],

@@ -10,7 +10,7 @@ import { CirclePicker } from 'react-color'
 function ReminderEditor(props) {
   const [show, setShow] = useState(false)
   const [color, setColor] = useState('#ffffff')
-  const [name, setName] = useState('')
+  const [reminderText, setReminderText] = useState('')
   const [city, setCity] = useState('')
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
@@ -29,19 +29,21 @@ function ReminderEditor(props) {
     e.preventDefault()
     setRecordatory({
       color: color,
-      name: name,
+      reminderText: reminderText,
       city: city,
       date: date,
       time: time,
+      jsDate: new Date(date + '-' + time),
     })
 
     const remi = {
       color: color,
-      name: name,
+      reminderText: reminderText,
       city: city,
       date: date,
       time: time,
       key: `reminder-${props.messages.length}`,
+      jsDate: new Date(date + '-' + time),
     }
     props.dispatch({ type: 'ADD', message: remi })
     handleClose(e)
@@ -69,7 +71,7 @@ function ReminderEditor(props) {
           <Form.Control
             type="text"
             placeholder="Enter Reminder"
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setReminderText(e.target.value)}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCity">

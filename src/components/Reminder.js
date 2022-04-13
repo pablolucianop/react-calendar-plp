@@ -28,13 +28,16 @@ import './Reminder.css'
 
 // getLatLongFromCity('Rosario', apiKey)
 
-const Reminder = () => {
+const Reminder = ({ city, reminderText, date, color }) => {
   return (
     <div className="reminder-container">
-      Reminder
+      {/* Reminder */}
       {/* <div className="close">X</div> */}
       {/* {mainWeatherData}
       {icon} */}
+      {city}
+      {reminderText}
+      {date}
     </div>
   )
 }
