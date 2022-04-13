@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { CirclePicker } from 'react-color'
 import DatePicker from './DatePicker'
-function ReminderEditor(state) {
+function ReminderEditor(props) {
   const [show, setShow] = useState(false)
   const [color, setColor] = useState('#ffffff')
   const [name, setName] = useState('')
@@ -79,17 +79,26 @@ function ReminderEditor(state) {
             <Form.Label>Color</Form.Label>
             {show && <DatePicker />}
           </Form.Group>
+          {props.messages}
           <Button variant="primary" type="Add" onClick={handleAdd}>
             Add
           </Button>
           <Button variant="secondary" type="Cancel" onClick={handleClose}>
-            Cancel {state[0]}
+            Cancel
           </Button>{' '}
-          {console.log('name', name)}
+          {console.log('props', props)}
         </Form>
       </Modal>
     </>
   )
 }
 
-export default ReminderEditor
+// const mapStateToProps = (state) => ({
+//   messages: state.messages,
+// })
+
+const mapStateToProps = (state) => {
+  return { messages: state }
+}
+
+export default connect(mapStateToProps)(ReminderEditor)
