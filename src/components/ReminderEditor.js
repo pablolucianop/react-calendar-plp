@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { CirclePicker } from 'react-color'
 import DatePicker from './DatePicker'
+
 function ReminderEditor(props) {
   const [show, setShow] = useState(false)
   const [color, setColor] = useState('#ffffff')
