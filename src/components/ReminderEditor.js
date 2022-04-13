@@ -21,7 +21,7 @@ function ReminderEditor(props) {
   }
   const handleDispa = (e) => {
     e.preventDefault()
-    props.dispatch({ type: 'ADD', message: 'hola pichu' })
+    // props.dispatch({ type: 'ADD', message: 'hola pichu' })
   }
   const handleShow = () => setShow(true)
   const handleAdd = (e) => {
@@ -34,6 +34,14 @@ function ReminderEditor(props) {
       hour: hour,
     })
 
+    const remi = {
+      color: color,
+      name: name,
+      city: city,
+      date: date,
+      hour: hour,
+    }
+    props.dispatch({ type: 'ADD', message: remi })
     // handleClose(e)
     console.log('recodatory', recodatory)
   }
@@ -83,7 +91,7 @@ function ReminderEditor(props) {
             <Form.Label>Color</Form.Label>
             {show && <DatePicker />}
           </Form.Group>
-          {props.messages}
+          {/* {props.messages} */}
           <Button variant="primary" type="Add" onClick={handleAdd}>
             Add
           </Button>

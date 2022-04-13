@@ -68,7 +68,7 @@ function App() {
           <ul>
             {console.log('this.props.messages', this.props.messages)}
             {this.props.messages.map((message, idx) => {
-              return <li key={idx}>{message}</li>
+              return <li key={idx}>{message.city}</li>
             })}
           </ul>
         </div>
