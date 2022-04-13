@@ -81,7 +81,7 @@ function ReminderEditor(props) {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCity">
           <Form.Label>Date and Time</Form.Label>
-          {show && <DatePicker />}
+          {/* {show && <DatePicker />} */}
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCity">
           <Form.Label>Color</Form.Label>
