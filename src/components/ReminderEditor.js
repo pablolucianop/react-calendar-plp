@@ -51,7 +51,7 @@ function ReminderEditor(props) {
   }
 
   return (
-    <>
+    <div className="reminder-editor">
       <Button variant="primary" onClick={handleShow}>
         +
       </Button>
@@ -120,7 +120,7 @@ function ReminderEditor(props) {
       </Button>{' '}
       {console.log('props', props)}
       {/* </Form> */}
-    </>
+    </div>
   )
 }
 

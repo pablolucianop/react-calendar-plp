@@ -28,6 +28,7 @@ function ModalComponent(props) {
     // props.dispatch({ type: 'ADD', message: 'hola pichu' })
   }
   const handleShow = () => setShow(true)
+  const handleHide = () => setShow(true)
   const handleAdd = (e) => {
     e.preventDefault()
     setRecordatory({
@@ -59,7 +60,7 @@ function ModalComponent(props) {
         +
       </Button>
       <Modal show={show} onHide={handleClose}>
-        {/* <ReminderEditor> </ReminderEditor> */}
+        <ReminderEditor> </ReminderEditor>
         <Day> </Day>
       </Modal>
     </>
