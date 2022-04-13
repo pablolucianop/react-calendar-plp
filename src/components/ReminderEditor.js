@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { CirclePicker } from 'react-color'
-import DatePicker from './DatePicker'
+// import DatePicker from './DatePicker'
 
 function ReminderEditor(props) {
   const [show, setShow] = useState(false)
@@ -81,7 +81,19 @@ function ReminderEditor(props) {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCity">
           <Form.Label>Date and Time</Form.Label>
-          {/* {show && <DatePicker />} */}
+          <Form.Control
+            type="date"
+            // placeholder="Enter City"
+            // onChange={(e) => setCity(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formCity">
+          <Form.Label>Date and Time</Form.Label>
+          <Form.Control
+            type="time"
+            // placeholder="Enter City"
+            // onChange={(e) => setCity(e.target.value)}
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCity">
           <Form.Label>Color</Form.Label>
