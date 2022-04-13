@@ -39,45 +39,6 @@ store.dispatch({ type: 'ADD', message: 'hola' })
 function App() {
   const calendar = <Calendar />
 
-  // React:
-  class Presentational extends React.Component {
-    constructor(props) {
-      super(props)
-      this.state = {
-        input: '',
-      }
-      this.handleChange = this.handleChange.bind(this)
-      this.submitMessage = this.submitMessage.bind(this)
-    }
-    handleChange(event) {
-      this.setState({
-        input: event.target.value,
-      })
-    }
-    submitMessage() {
-      this.props.submitNewMessage(this.state.input)
-      this.setState({
-        input: '',
-      })
-    }
-    render() {
-      return (
-        <div>
-          <h2>Type in a new Message:</h2>
-          <input value={this.state.input} onChange={this.handleChange} />
-          <br />
-          <button onClick={this.submitMessage}>Submit</button>
-          <ul>
-            {console.log('this.props.messages', this.props.messages)}
-            {this.props.messages.map((message, idx) => {
-              return <li key={idx}>{message.city}</li>
-            })}
-          </ul>
-        </div>
-      )
-    }
-  }
-
   // React-Redux
 
   const mapStateToProps = (state) => {
@@ -92,16 +53,10 @@ function App() {
   //   }
   // }
 
-  const Container = connect(
-    mapStateToProps
-    // mapDispatchToProps
-  )(Presentational)
-
   return (
     // <Provider store={store}>
 
     <Provider store={store}>
-      <Container />
       <div className="App">
         <Calendar />
       </div>
