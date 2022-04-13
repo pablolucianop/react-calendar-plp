@@ -28,7 +28,6 @@ const Day = ({ day, isWeekend, isToday, isThisMonth }) => {
     >
       {getDayNumber(day)}
       <Reminder />
-      <ReminderEditor test={'test'} />
     </div>
   )
 }

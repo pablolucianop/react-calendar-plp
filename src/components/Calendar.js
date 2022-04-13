@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import Button from 'react-bootstrap/Button'
 import './Calendar.css'
+import ReminderEditor from './ReminderEditor'
 
 import {
   getDays,
@@ -31,21 +32,24 @@ function Calendar() {
   //api.openweathermap.org/data/2.5/weather?q=Rosario&units=imperial&appid=88311788ed96ee764097bb269c07c5f7
 
   return (
-    <div className="grid-container">
-      <div>
-        <div className="days-of-week columns7">
-          {weekDays.map((day) => (
-            <div className="day-of-week" key={day}>
-              {day}
-            </div>
-          ))}
-        </div>
-        <div className="weeks">
-          {weeks.map((week) => (
-            <Week key={week} date={date} week={week} />
-          ))}
+    <div>
+      <div className="grid-container">
+        <div>
+          <div className="days-of-week columns7">
+            {weekDays.map((day) => (
+              <div className="day-of-week" key={day}>
+                {day}
+              </div>
+            ))}
+          </div>
+          <div className="weeks">
+            {weeks.map((week) => (
+              <Week key={week} date={date} week={week} />
+            ))}
+          </div>
         </div>
       </div>
+      <ReminderEditor test={'test'} />
     </div>
   )
 }

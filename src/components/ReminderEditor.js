@@ -19,6 +19,10 @@ function ReminderEditor(props) {
     e.preventDefault()
     setShow(false)
   }
+  const handleDispa = (e) => {
+    e.preventDefault()
+    props.dispatch({ type: 'ADD', message: 'hola pichu' })
+  }
   const handleShow = () => setShow(true)
   const handleAdd = (e) => {
     e.preventDefault()
@@ -82,6 +86,9 @@ function ReminderEditor(props) {
           {props.messages}
           <Button variant="primary" type="Add" onClick={handleAdd}>
             Add
+          </Button>
+          <Button variant="primary" type="Add" onClick={handleDispa}>
+            dispa
           </Button>
           <Button variant="secondary" type="Cancel" onClick={handleClose}>
             Cancel

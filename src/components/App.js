@@ -32,6 +32,7 @@ const messageReducer = (state = [], action) => {
 }
 
 const store = createStore(messageReducer)
+store.dispatch({ type: 'ADD', message: 'hola' })
 
 function App() {
   const calendar = <Calendar />
@@ -81,15 +82,18 @@ function App() {
     return { messages: state }
   }
 
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      submitNewMessage: (message) => {
-        dispatch(addMessage(message))
-      },
-    }
-  }
+  // const mapDispatchToProps = (dispatch) => {
+  //   return {
+  //     submitNewMessage: (message) => {
+  //       dispatch(addMessage(message))
+  //     },
+  //   }
+  // }
 
-  const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational)
+  const Container = connect(
+    mapStateToProps
+    // mapDispatchToProps
+  )(Presentational)
 
   return (
     // <Provider store={store}>
