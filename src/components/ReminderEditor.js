@@ -13,7 +13,7 @@ function ReminderEditor(props) {
   const [name, setName] = useState('')
   const [city, setCity] = useState('')
   const [date, setDate] = useState('')
-  const [hour, setHour] = useState('')
+  const [time, setTime] = useState('')
   const [recodatory, setRecordatory] = useState({})
 
   const handleClose = (e) => {
@@ -32,7 +32,7 @@ function ReminderEditor(props) {
       name: name,
       city: city,
       date: date,
-      hour: hour,
+      time: time,
     })
 
     const remi = {
@@ -40,7 +40,8 @@ function ReminderEditor(props) {
       name: name,
       city: city,
       date: date,
-      hour: hour,
+      time: time,
+      key: `reminder-${props.messages.length}`,
     }
     props.dispatch({ type: 'ADD', message: remi })
     handleClose(e)
@@ -84,7 +85,7 @@ function ReminderEditor(props) {
           <Form.Control
             type="date"
             // placeholder="Enter City"
-            // onChange={(e) => setCity(e.target.value)}
+            onChange={(e) => setDate(e.target.value)}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCity">
@@ -92,7 +93,7 @@ function ReminderEditor(props) {
           <Form.Control
             type="time"
             // placeholder="Enter City"
-            // onChange={(e) => setCity(e.target.value)}
+            onChange={(e) => setTime(e.target.value)}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCity">
