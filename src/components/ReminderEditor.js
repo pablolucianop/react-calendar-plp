@@ -70,6 +70,7 @@ function ReminderEditor(props) {
             Reminder
           </Form.Label>
           <Form.Control
+            defaultValue={'email@example.com'}
             type="text"
             placeholder="Enter Reminder"
             maxLength="30"
@@ -79,6 +80,7 @@ function ReminderEditor(props) {
         <Form.Group className="mb-3" controlId="formCity">
           <Form.Label>City</Form.Label>
           <Form.Control
+            defaultValue={'email@example.com'}
             type="text"
             placeholder="Enter City"
             maxLength="30"
@@ -89,7 +91,7 @@ function ReminderEditor(props) {
           <Form.Label>Date and Time</Form.Label>
           <Form.Control
             type="date"
-            // placeholder="Enter City"
+            defaultValue={'2000-11-11'}
             onChange={(e) => setDate(e.target.value)}
           />
         </Form.Group>
@@ -98,6 +100,7 @@ function ReminderEditor(props) {
           <Form.Control
             type="time"
             // placeholder="Enter City"
+            defaultValue={'11:11'}
             onChange={(e) => setTime(e.target.value)}
           />
         </Form.Group>
