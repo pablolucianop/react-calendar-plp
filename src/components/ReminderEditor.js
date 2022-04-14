@@ -51,6 +51,7 @@ function ReminderEditor({ dispatch, messages, setShow }) {
     var fromdt = new Date(yy, mm - 1, dd, hh, min)
 
     console.log('fromdt', fromdt)
+    console.log(`reminder-${messages.length}`)
 
     const remi = {
       color: color,
@@ -157,7 +158,7 @@ function ReminderEditor({ dispatch, messages, setShow }) {
 }
 
 const mapStateToProps = (state) => {
-  return { messages: state }
+  return { messages: state.reminders, interactions: state.interactions }
 }
 
 export default connect(mapStateToProps)(ReminderEditor)

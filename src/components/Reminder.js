@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { connect } from 'react-redux'
 import './Reminder.css'
 
 // const apiKey = '88311788ed96ee764097bb269c07c5f7'
@@ -36,9 +36,15 @@ const Reminder = ({
   time,
   show,
   isTheMainDay,
+  dispatch,
+  key,
 }) => {
+  const handleSubstract = () => {
+    dispatch({ type: 'SUBSTRACT', key: `reminder-1` })
+  }
+
   const reminderBig = (
-    <div>
+    <div onClick={handleSubstract}>
       <div>{reminderText}</div>
       <div>{date}</div>
       <div>{time}</div>
@@ -65,4 +71,8 @@ const Reminder = ({
   )
 }
 
-export default Reminder
+const mapStateToProps = (state) => {
+  return { messages: state.reminders, interactions: state.interactions }
+}
+
+export default connect(mapStateToProps)(Reminder)

@@ -13,6 +13,14 @@ const addMessage = (message) => {
   }
 }
 
+const SUBSTRACT = 'SUBSTRACT'
+const substrackReminder = (key) => {
+  return {
+    type: SUBSTRACT,
+    key: key,
+  }
+}
+
 const SELECT = 'SELECT'
 const addElement = (selected) => {
   return {
@@ -33,6 +41,14 @@ const messageReducer = (state = initialState, action) => {
     case ADD:
       return {
         reminders: [...state.reminders, action.message],
+        interactions: [...state.interactions],
+      }
+    case SUBSTRACT:
+      console.log('action.key', action.key)
+      return {
+        reminders: state.reminders.filter(
+          (reminder) => (reminder.key = !action.key)
+        ),
         interactions: [...state.interactions],
       }
     case SELECT:

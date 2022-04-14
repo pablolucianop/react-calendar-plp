@@ -56,6 +56,7 @@ const Day = ({
             time={rem.time}
             show={show}
             isTheMainDay={isTheMainDay}
+            key={rem.key}
           />
         </div>
       ))}
