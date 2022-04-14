@@ -28,7 +28,7 @@ const Day = ({
 
   return (
     <div
-      className={`day 
+      className={`day scroll1 scroll2
                  ${isToday && 'today-background'}
                  ${isWeekend && 'gray-background'}
                  ${isWeekend & isThisMonth ? 'accent-Color-text' : ''}
