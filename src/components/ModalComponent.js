@@ -60,8 +60,8 @@ function ModalComponent(props) {
         +
       </Button> */}
       <Modal show={show} onHide={handleClose}>
-        {/* <ReminderEditor> </ReminderEditor> */}
-        <Day> </Day>
+        <ReminderEditor />
+        <Day />
       </Modal>
     </>
   )
