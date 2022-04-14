@@ -1,5 +1,5 @@
 .columns7 {
-  width: 100%;
+  /* width: 100%; */
   display: grid;
-  grid-template-columns: 15% 15% 15% 15% 15% 15% 15%;
+  grid-template-columns: repeat(7, 1fr);
 }
