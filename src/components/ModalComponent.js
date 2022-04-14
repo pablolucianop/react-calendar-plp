@@ -9,7 +9,7 @@ import ReminderEditor from './ReminderEditor'
 import Day from './Day'
 // import DatePicker from './DatePicker'
 
-function ModalComponent(props) {
+function ModalComponent({ show, setShow, messages, dispatch }) {
   // const [show, setShow] = useState(false)
   const [color, setColor] = useState('#ffffff')
   const [reminderText, setReminderText] = useState('')
@@ -17,11 +17,10 @@ function ModalComponent(props) {
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
   const [recodatory, setRecordatory] = useState({})
-  const show = props.show
-  const setShow = props.setShow
+
   const handleClose = (e) => {
     // e.preventDefault()
-    props.setShow(false)
+    setShow(false)
   }
   const handleDispa = (e) => {
     e.preventDefault()
@@ -46,10 +45,10 @@ function ModalComponent(props) {
       city: city,
       date: date,
       time: time,
-      key: `reminder-${props.messages.length}`,
+      key: `reminder-${messages.length}`,
       jsDate: new Date(date + '-' + time),
     }
-    props.dispatch({ type: 'ADD', message: remi })
+    dispatch({ type: 'ADD', message: remi })
     handleClose(e)
     console.log('recodatory', recodatory)
   }

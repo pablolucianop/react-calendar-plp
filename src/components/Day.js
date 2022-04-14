@@ -37,7 +37,7 @@ const Day = ({
       onClick={handleShow}
     >
       {getDayNumber(day)}
-      {console.log('DAYYS props.messages', day, messages)}
+      {console.log('DAYYS messages', day, messages)}
 
       {/* <Reminder /> */}
       {messages.map((rem) => (
