@@ -65,7 +65,7 @@ const Day = ({
   )
 }
 const mapStateToProps = (state) => {
-  return { messages: state }
+  return { messages: state.reminders }
 }
 
 export default connect(mapStateToProps)(Day)

@@ -14,10 +14,20 @@ const addMessage = (message) => {
   }
 }
 
-const messageReducer = (state = [], action) => {
+const initialState = {
+  reminders: [],
+  interactions: [],
+}
+
+// [...state, action.message]
+
+const messageReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD:
-      return [...state, action.message]
+      return {
+        reminders: [...state.reminders, action.message],
+        interactions: [],
+      }
     default:
       return state
   }
@@ -32,7 +42,7 @@ function App() {
   // React-Redux
 
   const mapStateToProps = (state) => {
-    return { messages: state }
+    return { messages: state.reminders }
   }
 
   return (
