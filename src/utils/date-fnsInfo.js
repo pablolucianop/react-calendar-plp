@@ -31,9 +31,4 @@ const getWeekDays = (date = now, format = 'EEEE') => {
   return arr.reduce((accum, day) => [...accum, formatFn(day, format)], [])
 }
 
-console.log('getDays', getDays())
-console.log('getDayNumber', getDayNumber())
-console.log('getWeekDays', getWeekDays())
-console.log('getWeeks', getWeeks())
-
 export { getDays, getDayNumber, getWeekDays, getWeeks }

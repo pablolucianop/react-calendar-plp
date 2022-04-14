@@ -19,7 +19,6 @@ function ReminderEditor({ dispatch, messages, setShow }) {
 
   const handleClose = (e) => {
     e.preventDefault()
-    console.log('setShow2', setShow)
     setShow(false)
   }
   const handleDispa = (e) => {
@@ -55,7 +54,6 @@ function ReminderEditor({ dispatch, messages, setShow }) {
     }
     dispatch({ type: 'ADD', message: remi })
     handleClose(e)
-    console.log('recodatory', recodatory)
   }
 
   return (

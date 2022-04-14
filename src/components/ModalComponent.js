@@ -51,7 +51,6 @@ function ModalComponent({ show, setShow, messages, dispatch }) {
     }
     dispatch({ type: 'ADD', message: remi })
     handleClose(e)
-    console.log('recodatory', recodatory)
   }
 
   return (

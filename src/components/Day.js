@@ -38,11 +38,6 @@ const Day = ({
     >
       <div className="number-of-day">{numberOfDay}</div>
 
-      {console.log('DAYYS messages', day, messages)}
-      {/* (function (rem) {
-  return rem.faction === "Rebels";
-}) */}
-      {/* <Reminder /> */}
       {messages.map((rem) => (
         <div className="-" key={rem.key}>
           <Reminder

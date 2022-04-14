@@ -15,18 +15,9 @@ const addMessage = (message) => {
   }
 }
 
-console.log('datero', Date.now())
-
-// const messageReducer = () => {
-//   return {
-//     messages: [1, 2],
-//   }
-// }
-
 const messageReducer = (state = [], action) => {
   switch (action.type) {
     case ADD:
-      console.log('action', action)
       return [...state, action.message]
     default:
       return state
