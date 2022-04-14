@@ -9,7 +9,7 @@ import { CirclePicker } from 'react-color'
 import ReminderEditor from './ReminderEditor'
 import Day from './Day'
 
-function ModalComponent({ show, setShow, messages, dispatch }) {
+function ModalComponent({ show, setShow, messages, dispatch, interactions }) {
   const [color, setColor] = useState('#ffffff')
   const [reminderText, setReminderText] = useState('')
   const [city, setCity] = useState('')
@@ -50,9 +50,11 @@ function ModalComponent({ show, setShow, messages, dispatch }) {
     handleClose(e)
   }
 
-  const day = new Date(
-    'Sun Apr 03 2022 00:00:00 GMT-0300 (hora estándar de Argentina)'
-  )
+  // const day = new Date(
+  //   'Sun Apr 03 2022 00:00:00 GMT-0300 (hora estándar de Argentina)'
+  // )
+
+  const day = interactions[interactions.length - 1]
 
   const now = new Date()
 
@@ -78,7 +80,7 @@ function ModalComponent({ show, setShow, messages, dispatch }) {
 }
 
 const mapStateToProps = (state) => {
-  return { messages: state }
+  return { messages: state.reminders, interactions: state.interactions }
 }
 
 export default connect(mapStateToProps)(ModalComponent)
