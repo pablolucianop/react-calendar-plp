@@ -30,6 +30,14 @@ const addElement = (selected) => {
   }
 }
 
+const SELECTREMINDER = 'SELECTREMINDER'
+const selectReminder = (selectedReminder) => {
+  return {
+    type: SELECT,
+    selectedReminder: selectedReminder,
+  }
+}
+
 const initialState = {
   reminders: [],
   interactions: [],
@@ -48,12 +56,19 @@ const messageReducer = (state = initialState, action) => {
       console.log('action.key', action.key)
       return {
         reminders: [],
+        selectedReminder: state.selectedReminder,
         interactions: [...state.interactions],
       }
     case SELECT:
-      console.log('messageReducer', state)
       return {
         reminders: [...state.reminders],
+        selectedReminder: state.selectedReminder,
+        interactions: [...state.interactions, action.selected],
+      }
+    case SELECTREMINDER:
+      return {
+        reminders: [...state.reminders],
+        selectedReminder: '',
         interactions: [...state.interactions, action.selected],
       }
     default:

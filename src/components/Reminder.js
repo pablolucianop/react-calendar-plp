@@ -12,9 +12,16 @@ const Reminder = ({
   isTheMainDay,
   dispatch,
   key,
+  handleShow,
 }) => {
   const handleSubstract = () => {
     dispatch({ type: 'SUBSTRACT', key: `reminder-1` })
+  }
+
+  const handleRemimderClick = () => {
+    handleShow()
+    dispatch({ type: 'SELECT', selectedReminder: city })
+    console.log('selectedReminder: key', key)
   }
 
   const reminderBig = (
@@ -37,6 +44,7 @@ const Reminder = ({
   return (
     <div
       className="reminder-container"
+      onClick={handleRemimderClick}
       style={{
         backgroundColor: color,
         transition: 'ease all 500ms',

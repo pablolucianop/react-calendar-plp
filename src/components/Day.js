@@ -82,18 +82,19 @@ const Day = ({
       <div className="number-of-day">{numberOfDay}</div>
 
       {result.map((rem) => (
-        <div className="-" key={rem.key}>
-          <Reminder
-            reminderText={rem.reminderText}
-            date={rem.date}
-            city={rem.city}
-            color={rem.color}
-            time={rem.time}
-            show={show}
-            isTheMainDay={isTheMainDay}
-            key={rem.key}
-          />
-        </div>
+        // <div className="-" key={rem.key}>
+        <Reminder
+          reminderText={rem.reminderText}
+          date={rem.date}
+          city={rem.city}
+          color={rem.color}
+          time={rem.time}
+          show={show}
+          isTheMainDay={isTheMainDay}
+          key={rem.key}
+          handleShow={handleShow}
+        />
+        // </div>
       ))}
       {show && isTheMainDay && (
         <Button
