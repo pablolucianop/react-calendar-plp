@@ -46,9 +46,7 @@ const messageReducer = (state = initialState, action) => {
     case SUBSTRACT:
       console.log('action.key', action.key)
       return {
-        reminders: state.reminders.filter(
-          (reminder) => (reminder.key = !action.key)
-        ),
+        reminders: [],
         interactions: [...state.interactions],
       }
     case SELECT:
