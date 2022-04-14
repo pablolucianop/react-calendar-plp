@@ -87,6 +87,13 @@ function ReminderEditor({ dispatch, messages, setShow }) {
     // '#607d8b',
   ]
 
+  const defaultReminder = {
+    text: 'Add a reminder',
+    city: 'Add a city',
+    date: '',
+    time: '',
+  }
+
   return (
     <div className="reminder-editor">
       <Form.Group className="mb-3" controlId="formBasicReminder">
@@ -101,7 +108,7 @@ function ReminderEditor({ dispatch, messages, setShow }) {
           Reminder
         </Form.Label>
         <Form.Control
-          defaultValue={'pasear al perro'}
+          defaultValue={defaultReminder.text}
           type="text"
           placeholder="Enter Reminder"
           maxLength="30"
@@ -111,7 +118,7 @@ function ReminderEditor({ dispatch, messages, setShow }) {
       <Form.Group className="mb-3" controlId="formCity">
         <Form.Label>City</Form.Label>
         <Form.Control
-          defaultValue={'Salsipuedes'}
+          defaultValue={defaultReminder.city}
           type="text"
           placeholder="Enter City"
           maxLength="30"
@@ -122,7 +129,7 @@ function ReminderEditor({ dispatch, messages, setShow }) {
         <Form.Label>Date and Time</Form.Label>
         <Form.Control
           type="date"
-          // defaultValue={'2000-11-11'}
+          defaultValue={defaultReminder.date}
           onChange={(e) => setDate(e.target.value)}
         />
       </Form.Group>
@@ -131,7 +138,7 @@ function ReminderEditor({ dispatch, messages, setShow }) {
         <Form.Control
           type="time"
           // placeholder="Enter City"
-          defaultValue={'--:--'}
+          defaultValue={defaultReminder.time}
           onChange={(e) => setTime(e.target.value)}
         />
       </Form.Group>
