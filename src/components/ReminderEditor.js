@@ -52,9 +52,9 @@ function ReminderEditor(props) {
 
   return (
     <div className="reminder-editor">
-      <Button variant="primary" onClick={handleShow}>
+      {/* <Button variant="primary" onClick={handleShow}>
         +
-      </Button>
+      </Button> */}
       {/* <Form> */}
       <Form.Group className="mb-3" controlId="formBasicReminder">
         <Form.Label
