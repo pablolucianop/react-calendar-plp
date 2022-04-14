@@ -11,7 +11,7 @@ const Weather = ({ city }) => {
   useEffect(() => {
     async function fetchData() {
       const apiKey = '88311788ed96ee764097bb269c07c5f7'
-      const city = 'Rosario'
+      console.log('city', city)
       const res = await axios.get(
         `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
       )

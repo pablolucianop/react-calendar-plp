@@ -8,7 +8,7 @@ import { CirclePicker } from 'react-color'
 import { format, parseISO } from 'date-fns'
 
 function ReminderEditor({ dispatch, messages, setShow }) {
-  const [color, setColor] = useState('#ffffff')
+  const [color, setColor] = useState('')
   const [reminderText, setReminderText] = useState('')
   const [city, setCity] = useState('')
   const [date, setDate] = useState('')
