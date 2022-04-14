@@ -3,7 +3,7 @@ import axios from 'axios'
 
 let icon
 
-const Weather = ({ city }) => {
+const Weather = () => {
   const [state, setState] = useState({
     serverResponse: '',
   })
@@ -11,7 +11,8 @@ const Weather = ({ city }) => {
   useEffect(() => {
     async function fetchData() {
       const apiKey = '88311788ed96ee764097bb269c07c5f7'
-      console.log('city', city)
+      // console.log('city', city)
+      const city = 'Rosario'
       const res = await axios.get(
         `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
       )
