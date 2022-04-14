@@ -26,20 +26,31 @@ function ReminderEditor({ dispatch, messages, setShow }) {
   const handleAdd = (e) => {
     e.preventDefault()
 
+    setRecordatory({
+      color: color,
+      reminderText: reminderText,
+      city: city,
+      date: date,
+      time: time,
+      jsDate: new Date(date + '-' + time),
+    })
+
     let dateStr = `${date} ${time}`
     //function that create a js date from a string in the format dd-mm-yyyy hh:mm using date-fns
     console.log('dateStrwwww', dateStr)
     var d = dateStr
     var d1 = d.split(' ')
-    var date = d1[0].split('-')
-    var time = d1[1].split(':')
-    var dd = date[2]
-    var mm = date[1] - 1
-    var yy = date[0]
-    var hh = time[0]
-    var min = time[1]
+    var dateFormat = d1[0].split('-')
+    var timeFormat = d1[1].split(':')
+    var dd = dateFormat[2]
+    var mm = dateFormat[1] - 1
+    var yy = dateFormat[0]
+    var hh = timeFormat[0]
+    var min = timeFormat[1]
 
     var fromdt = new Date(yy, mm - 1, dd, hh, min)
+
+    console.log('fromdt', fromdt)
 
     const remi = {
       color: color,
