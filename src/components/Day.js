@@ -14,6 +14,8 @@ const Day = ({
   isThisMonth,
   messages,
   handleShow,
+  show,
+  isTheMainDay,
 }) => {
   const getWeatherFromCityInDate = async (city, date) => {
     const response = await fetch(
@@ -48,6 +50,15 @@ const Day = ({
           />
         </div>
       ))}
+      {show && isTheMainDay && (
+        <Button
+          variant="primary"
+          size="sm"
+          //  onClick={handleShow}
+        >
+          +
+        </Button>
+      )}
     </div>
   )
 }

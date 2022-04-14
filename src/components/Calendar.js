@@ -53,6 +53,7 @@ function Calendar() {
                 date={date}
                 week={week}
                 handleShow={handleShow}
+                show={show}
               />
             ))}
           </div>
