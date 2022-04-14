@@ -3,8 +3,6 @@
 }
 .grid-container {
   display: grid;
-  /* background-color: chartreuse; */
-  /* grid-template-columns: auto auto auto; */
 }
 .days-of-week {
   background-color: #2f74b5;

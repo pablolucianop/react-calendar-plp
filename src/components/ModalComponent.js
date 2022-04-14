@@ -7,10 +7,8 @@ import Modal from 'react-bootstrap/Modal'
 import { CirclePicker } from 'react-color'
 import ReminderEditor from './ReminderEditor'
 import Day from './Day'
-// import DatePicker from './DatePicker'
 
 function ModalComponent({ show, setShow, messages, dispatch }) {
-  // const [show, setShow] = useState(false)
   const [color, setColor] = useState('#ffffff')
   const [reminderText, setReminderText] = useState('')
   const [city, setCity] = useState('')
@@ -19,13 +17,11 @@ function ModalComponent({ show, setShow, messages, dispatch }) {
   const [recodatory, setRecordatory] = useState({})
 
   const handleClose = (e) => {
-    // e.preventDefault()
     console.log('setShow', setShow)
     setShow(false)
   }
   const handleDispa = (e) => {
     e.preventDefault()
-    // props.dispatch({ type: 'ADD', message: 'hola pichu' })
   }
   const handleShow = () => setShow(true)
   const handleHide = () => setShow(true)
@@ -55,9 +51,6 @@ function ModalComponent({ show, setShow, messages, dispatch }) {
 
   return (
     <>
-      {/* <Button variant="primary" onClick={handleShow}>
-        +
-      </Button> */}
       <Modal show={show} onHide={handleClose}>
         <ReminderEditor setShow={setShow} />
         <Day />
@@ -65,10 +58,6 @@ function ModalComponent({ show, setShow, messages, dispatch }) {
     </>
   )
 }
-
-// const mapStateToProps = (state) => ({
-//   messages: state.messages,
-// })
 
 const mapStateToProps = (state) => {
   return { messages: state }

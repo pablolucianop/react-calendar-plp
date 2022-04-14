@@ -1,4 +1,3 @@
-// import { Provider } from 'react-redux'
 import React from 'react'
 import './App.css'
 import Calendar from './Calendar'
@@ -36,24 +35,12 @@ function App() {
     return { messages: state }
   }
 
-  // const mapDispatchToProps = (dispatch) => {
-  //   return {
-  //     submitNewMessage: (message) => {
-  //       dispatch(addMessage(message))
-  //     },
-  //   }
-  // }
-
   return (
-    // <Provider store={store}>
-
     <Provider store={store}>
       <div className="app">
         <Calendar />
       </div>
     </Provider>
-
-    // </Provider>
   )
 }
 

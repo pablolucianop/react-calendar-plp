@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import AddReminder from './AddReminder'
 import Reminder from './Reminder.js'
 import Button from 'react-bootstrap/Button'
-//import format from 'date-fns/format'
 
 const Day = ({
   day,
@@ -23,7 +22,7 @@ const Day = ({
     const data = await response.json()
     return data
   }
-  //   const ww = getWeatherFromCityInDate('rosario', '05/11/2022')
+
   const numberOfDay = getDayNumber(day)
 
   return (

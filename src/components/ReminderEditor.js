@@ -6,8 +6,6 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { CirclePicker } from 'react-color'
 import { format, parseISO } from 'date-fns'
-// import DatePicker from './DatePicker'
-// import { fns } from 'date-fns'
 
 function ReminderEditor({ dispatch, messages, setShow }) {
   const [color, setColor] = useState('#ffffff')
@@ -40,7 +38,7 @@ function ReminderEditor({ dispatch, messages, setShow }) {
     var yy = date[0]
     var hh = time[0]
     var min = time[1]
-    // var ss=time[2];
+
     var fromdt = new Date(yy, mm - 1, dd, hh, min)
 
     const remi = {
@@ -58,10 +56,6 @@ function ReminderEditor({ dispatch, messages, setShow }) {
 
   return (
     <div className="reminder-editor">
-      {/* <Button variant="primary" onClick={handleShow}>
-        +
-      </Button> */}
-      {/* <Form> */}
       <Form.Group className="mb-3" controlId="formBasicReminder">
         <Form.Label
           style={{
