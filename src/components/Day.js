@@ -35,16 +35,24 @@ const Day = ({
   const handleDayClick = () => {
     dispatch({ type: 'SELECT', selected: day })
     handleShow()
-    console.log('333 ///////')
-    console.log('333 day', day)
-    console.log('333 jsToDate', jsToDate(day))
-    console.log('333 messages[0].jsDate', messages[0].dateJs)
-    console.log(
-      '333 jsToDate(messages[0].dateJs)',
-      jsToDate(messages[0].dateJs)
-    )
+    // console.log('333 ///////')
+    // console.log('333 day', day)
+    // console.log('333 jsToDate', jsToDate(day))
+    // console.log('333 messages[0].jsDate', messages[0].dateJs)
+    // console.log(
+    //   '333 jsToDate(messages[0].dateJs)',
+    //   jsToDate(messages[0].dateJs)
+    // )
   }
 
+  function compareToDay(a) {
+    if (a !== undefined && a.city === numberOfDay.toString()) {
+      return true // jsToDate(a) === jsToDate(day)
+    }
+  }
+
+  const result = messages.filter(compareToDay)
+  console.log('333 result', result)
   // function checkSameDay(reminderDay) {
   //   if (typeof messages[0] != 'undefined') {
   //     console.log('messages', messages[0])
@@ -72,7 +80,7 @@ const Day = ({
     >
       <div className="number-of-day">{numberOfDay}</div>
 
-      {messages.map((rem) => (
+      {result.map((rem) => (
         <div className="-" key={rem.key}>
           <Reminder
             reminderText={rem.reminderText}
