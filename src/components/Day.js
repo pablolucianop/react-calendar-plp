@@ -48,8 +48,6 @@ const Day = ({
 
   const result = messages.filter(checkSameDay)
 
-  console.log('result', result)
-
   return (
     <div
       className={`day scroll1 scroll2
