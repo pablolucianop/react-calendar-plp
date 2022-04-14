@@ -2,6 +2,7 @@
   /* background-color: rgb(241, 196, 159); */
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 .close {
   right: 0;
