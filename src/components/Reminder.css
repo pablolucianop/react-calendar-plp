@@ -1,7 +1,9 @@
 .reminder-container {
   display: flex;
   flex-direction: column;
-  margin-left: 5px;
+  margin-left: 4px;
+  border-radius: 4px;
+  padding-left: 4px;
 }
 .close {
   right: 0;
