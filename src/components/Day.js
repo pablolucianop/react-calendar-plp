@@ -54,6 +54,7 @@ const Day = ({
         <Button
           variant="primary"
           size="sm"
+          className="buttonInDay"
           //  onClick={handleShow}
         >
           +
