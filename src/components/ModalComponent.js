@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
+import { isSameDay, isSameMonth, isWeekend } from 'date-fns'
 import './ReminderEditor.css'
 import { connect } from 'react-redux'
 import Form from 'react-bootstrap/Form'
@@ -49,11 +50,28 @@ function ModalComponent({ show, setShow, messages, dispatch }) {
     handleClose(e)
   }
 
+  const day = new Date(
+    'Sun Apr 03 2022 00:00:00 GMT-0300 (hora estándar de Argentina)'
+  )
+
+  const now = new Date()
+
   return (
     <>
       <Modal show={show} onHide={handleClose}>
         <ReminderEditor setShow={setShow} />
-        <Day show={show} isTheMainDay={true} />
+        <Day
+          show={show}
+          isTheMainDay={true}
+          key={day}
+          day={day}
+          date={date}
+          isWeekend={isWeekend(day)}
+          isToday={isSameDay(day, now)}
+          isThisMonth={isSameMonth(day, date)}
+          handleShow={handleShow}
+          show={show}
+        />
       </Modal>
     </>
   )
