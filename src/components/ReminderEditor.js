@@ -122,7 +122,7 @@ function ReminderEditor({ dispatch, messages, setShow }) {
         <Form.Label>Date and Time</Form.Label>
         <Form.Control
           type="date"
-          defaultValue={'2000-11-11'}
+          // defaultValue={'2000-11-11'}
           onChange={(e) => setDate(e.target.value)}
         />
       </Form.Group>

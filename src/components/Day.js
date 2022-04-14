@@ -27,11 +27,28 @@ const Day = ({
   }
 
   const numberOfDay = getDayNumber(day)
+  console.log('dayrrr', day)
 
   const handleDayClick = () => {
     dispatch({ type: 'SELECT', selected: day })
     handleShow()
   }
+
+  function checkSameDay(reminderDay) {
+    if (typeof messages[0] != 'undefined') {
+      console.log('messages', messages[0])
+
+      const ee = new Date().toISOString().split(reminderDay)[0].substring(0, 10)
+      console.log('ee', ee)
+      const ee2 = new Date().toISOString().split(day)[0].substring(0, 10)
+      console.log('ee2', ee2)
+      return ee === ee2
+    }
+  }
+
+  const result = messages.filter(checkSameDay)
+
+  console.log('result', result)
 
   return (
     <div
@@ -46,7 +63,7 @@ const Day = ({
     >
       <div className="number-of-day">{numberOfDay}</div>
 
-      {messages.map((rem) => (
+      {result.map((rem) => (
         <div className="-" key={rem.key}>
           <Reminder
             reminderText={rem.reminderText}
