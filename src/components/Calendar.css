@@ -1,3 +1,6 @@
+.calendar {
+  width: 70%;
+}
 .grid-container {
   display: grid;
   /* background-color: chartreuse; */

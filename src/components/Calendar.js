@@ -36,7 +36,7 @@ function Calendar() {
   //api.openweathermap.org/data/2.5/weather?q=Rosario&units=imperial&appid=88311788ed96ee764097bb269c07c5f7
 
   return (
-    <div>
+    <div className="calendar">
       <div className="grid-container">
         <div>
           <div className="days-of-week columns7">

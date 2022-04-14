@@ -57,7 +57,7 @@ function App() {
     // <Provider store={store}>
 
     <Provider store={store}>
-      <div className="App">
+      <div className="app">
         <Calendar />
       </div>
     </Provider>
