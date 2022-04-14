@@ -1,3 +1,7 @@
 .reminder-editor {
   padding: 7px;
 }
+.circle-picker {
+  width: auto;
+  margin-left: 25%;
+}
