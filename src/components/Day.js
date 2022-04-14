@@ -54,6 +54,7 @@ const Day = ({
             city={rem.city}
             color={rem.color}
             time={rem.time}
+            show={show}
           />
         </div>
       ))}
