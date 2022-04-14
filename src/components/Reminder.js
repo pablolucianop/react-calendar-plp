@@ -29,6 +29,21 @@ import './Reminder.css'
 // getLatLongFromCity('Rosario', apiKey)
 
 const Reminder = ({ city, reminderText, date, color, time }) => {
+  const reminderBig = (
+    <div>
+      <div>{reminderText}</div>
+      <div>{date}</div>
+      <div>{time}</div>
+      <div>{city}</div>
+    </div>
+  )
+
+  const reminderSmall = (
+    <div>
+      {time} {reminderText}
+    </div>
+  )
+
   return (
     <div
       className="reminder-container"
@@ -37,10 +52,7 @@ const Reminder = ({ city, reminderText, date, color, time }) => {
         transition: 'ease all 500ms',
       }}
     >
-      <div>{reminderText}</div>
-      <div>{date}</div>
-      <div>{time}</div>
-      <div>{city}</div>
+      {reminderSmall}
     </div>
   )
 }

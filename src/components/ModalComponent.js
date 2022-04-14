@@ -60,7 +60,7 @@ function ModalComponent({ show, setShow, messages, dispatch }) {
         +
       </Button> */}
       <Modal show={show} onHide={handleClose}>
-        <ReminderEditor />
+        <ReminderEditor setShow={setShow} />
         <Day />
       </Modal>
     </>

@@ -8,8 +8,7 @@ import { CirclePicker } from 'react-color'
 // import DatePicker from './DatePicker'
 // import { fns } from 'date-fns'
 
-function ReminderEditor({ dispatch, messages }) {
-  const [show, setShow] = useState(false)
+function ReminderEditor({ dispatch, messages, setShow }) {
   const [color, setColor] = useState('#ffffff')
   const [reminderText, setReminderText] = useState('')
   const [city, setCity] = useState('')
@@ -19,6 +18,7 @@ function ReminderEditor({ dispatch, messages }) {
 
   const handleClose = (e) => {
     e.preventDefault()
+    console.log('setShow2', setShow)
     setShow(false)
   }
   const handleDispa = (e) => {
