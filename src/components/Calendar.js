@@ -40,9 +40,9 @@ function Calendar() {
       <div className="grid-container">
         <div>
           <div className="days-of-week columns7">
-            {weekDays.map((day) => (
-              <div className="day-of-week" key={day}>
-                {day}
+            {weekDays.map((dayInArr) => (
+              <div className="day-of-week" key={dayInArr}>
+                {dayInArr}
               </div>
             ))}
           </div>

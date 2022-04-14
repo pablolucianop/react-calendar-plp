@@ -11,9 +11,7 @@ import {
 
 import Day from './Day'
 
-const Week = (props) => {
-  const { date, week } = props
-
+const Week = ({ date, week, handleShow }) => {
   const days = useMemo(() => getDays(week), [week])
 
   const now = new Date()
@@ -28,7 +26,7 @@ const Week = (props) => {
           isWeekend={isWeekend(day)}
           isToday={isSameDay(day, now)}
           isThisMonth={isSameMonth(day, date)}
-          handleShow={props.handleShow}
+          handleShow={handleShow}
         />
       ))}
     </div>
