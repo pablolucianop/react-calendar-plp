@@ -52,7 +52,7 @@ function ModalComponent({ show, setShow, messages, dispatch }) {
   return (
     <>
       <Modal show={show} onHide={handleClose}>
-        {/* <ReminderEditor setShow={setShow} /> */}
+        <ReminderEditor setShow={setShow} />
         <Day show={show} isTheMainDay={true} />
       </Modal>
     </>
