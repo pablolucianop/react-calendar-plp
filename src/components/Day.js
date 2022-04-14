@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import AddReminder from './AddReminder'
 import Reminder from './Reminder.js'
 import Button from 'react-bootstrap/Button'
+//import format from 'date-fns/format'
 
 const Day = ({
   day,
@@ -24,7 +25,6 @@ const Day = ({
   }
   //   const ww = getWeatherFromCityInDate('rosario', '05/11/2022')
   const numberOfDay = getDayNumber(day)
-  console.log('handleShow', handleShow)
 
   return (
     <div
@@ -37,12 +37,11 @@ const Day = ({
       onClick={handleShow}
     >
       <div className="number-of-day">{numberOfDay}</div>
-      {console.log('DAYYS messages', day, messages)}
 
+      {console.log('DAYYS messages', day, messages)}
       {/* (function (rem) {
   return rem.faction === "Rebels";
 }) */}
-
       {/* <Reminder /> */}
       {messages.map((rem) => (
         <div className="-" key={rem.key}>

@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { CirclePicker } from 'react-color'
+import { format, parseISO } from 'date-fns'
 // import DatePicker from './DatePicker'
 // import { fns } from 'date-fns'
 
@@ -27,17 +28,21 @@ function ReminderEditor({ dispatch, messages, setShow }) {
   const handleShow = () => setShow(true)
   const handleAdd = (e) => {
     e.preventDefault()
-    setRecordatory({
-      color: color,
-      reminderText: reminderText,
-      city: city,
-      date: date,
-      time: time,
-      jsDate: new Date(date + '-' + time),
-    })
 
-    let formatStr = 'yyyy-dd-M HH:mm'
     let dateStr = `${date} ${time}`
+    //function that create a js date from a string in the format dd-mm-yyyy hh:mm using date-fns
+    console.log('dateStrwwww', dateStr)
+    var d = dateStr
+    var d1 = d.split(' ')
+    var date = d1[0].split('-')
+    var time = d1[1].split(':')
+    var dd = date[2]
+    var mm = date[1] - 1
+    var yy = date[0]
+    var hh = time[0]
+    var min = time[1]
+    // var ss=time[2];
+    var fromdt = new Date(yy, mm - 1, dd, hh, min)
 
     const remi = {
       color: color,
@@ -46,7 +51,7 @@ function ReminderEditor({ dispatch, messages, setShow }) {
       date: date,
       time: time,
       key: `reminder-${messages.length}`,
-      // dateJs: fns.parse(dateStr, formatStr, new Date()),
+      dateJs: fromdt,
     }
     dispatch({ type: 'ADD', message: remi })
     handleClose(e)
@@ -71,7 +76,7 @@ function ReminderEditor({ dispatch, messages, setShow }) {
           Reminder
         </Form.Label>
         <Form.Control
-          defaultValue={'email@example.com'}
+          defaultValue={'pasear al perro'}
           type="text"
           placeholder="Enter Reminder"
           maxLength="30"
@@ -81,7 +86,7 @@ function ReminderEditor({ dispatch, messages, setShow }) {
       <Form.Group className="mb-3" controlId="formCity">
         <Form.Label>City</Form.Label>
         <Form.Control
-          defaultValue={'email@example.com'}
+          defaultValue={'Salsipuedes'}
           type="text"
           placeholder="Enter City"
           maxLength="30"
