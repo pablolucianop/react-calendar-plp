@@ -27,6 +27,10 @@ const Day = ({
 
   const numberOfDay = getDayNumber(day)
 
+  const handleDayClick = () => {
+    handleShow()
+  }
+
   return (
     <div
       className={`day scroll1 scroll2
@@ -36,7 +40,7 @@ const Day = ({
                  ${!isThisMonth && 'disabled-text'}
                  ${show && isTheMainDay && 'main-day'}
         `}
-      onClick={handleShow}
+      onClick={handleDayClick}
     >
       <div className="number-of-day">{numberOfDay}</div>
 

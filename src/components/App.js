@@ -6,11 +6,18 @@ import { createStore } from 'redux'
 
 // Redux:
 const ADD = 'ADD'
-
 const addMessage = (message) => {
   return {
     type: ADD,
     message: message,
+  }
+}
+
+const SELECT = 'SELECT'
+const addElement = (selected) => {
+  return {
+    type: SELECT,
+    selected: selected,
   }
 }
 
@@ -26,7 +33,12 @@ const messageReducer = (state = initialState, action) => {
     case ADD:
       return {
         reminders: [...state.reminders, action.message],
-        interactions: [],
+        interactions: [...state.interactions],
+      }
+    case SELECT:
+      return {
+        reminders: [...state.reminders],
+        interactions: [...state.interactions, action.selected],
       }
     default:
       return state
