@@ -112,10 +112,10 @@ function ReminderEditor({ dispatch, messages }) {
       </Form.Group>
       <Button variant="primary" type="Add" onClick={handleAdd}>
         Add
-      </Button>
+      </Button>{' '}
       <Button variant="secondary" type="Cancel" onClick={handleClose}>
         Cancel
-      </Button>{' '}
+      </Button>
       {/* </Form> */}
     </div>
   )
