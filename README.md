@@ -12,6 +12,8 @@ Simple react calendar with the feature to add reminders, build for challenge.
 
 - If you specify the city, it adds a img of the weather in that zone!
 
+- Handle overflow when multiple reminders appear on the same date.
+
 ### Built with
 
 - React.js
