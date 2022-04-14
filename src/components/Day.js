@@ -34,6 +34,7 @@ const Day = ({
                  ${isWeekend & isThisMonth ? 'accent-Color-text' : ''}
                  ${!isThisMonth && 'disabled-text'}
         `}
+      onClick={handleShow}
     >
       {getDayNumber(day)}
       {console.log('DAYYS props.messages', day, messages)}
