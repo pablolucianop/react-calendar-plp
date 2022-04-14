@@ -20,6 +20,7 @@ function ModalComponent({ show, setShow, messages, dispatch }) {
 
   const handleClose = (e) => {
     // e.preventDefault()
+    console.log('setShow', setShow)
     setShow(false)
   }
   const handleDispa = (e) => {

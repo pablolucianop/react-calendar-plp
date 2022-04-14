@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { CirclePicker } from 'react-color'
 // import DatePicker from './DatePicker'
+// import { fns } from 'date-fns'
 
 function ReminderEditor({ dispatch, messages }) {
   const [show, setShow] = useState(false)
@@ -35,6 +36,9 @@ function ReminderEditor({ dispatch, messages }) {
       jsDate: new Date(date + '-' + time),
     })
 
+    let formatStr = 'yyyy-dd-M HH:mm'
+    let dateStr = `${date} ${time}`
+
     const remi = {
       color: color,
       reminderText: reminderText,
@@ -42,7 +46,7 @@ function ReminderEditor({ dispatch, messages }) {
       date: date,
       time: time,
       key: `reminder-${messages.length}`,
-      jsDate: new Date(date + '-' + time),
+      // dateJs: fns.parse(dateStr, formatStr, new Date()),
     }
     dispatch({ type: 'ADD', message: remi })
     handleClose(e)

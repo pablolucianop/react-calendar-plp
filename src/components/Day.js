@@ -23,7 +23,7 @@ const Day = ({
     return data
   }
   //   const ww = getWeatherFromCityInDate('rosario', '05/11/2022')
-
+  const numberOfDay = getDayNumber(day)
   console.log('handleShow', handleShow)
 
   return (
@@ -36,8 +36,12 @@ const Day = ({
         `}
       onClick={handleShow}
     >
-      {getDayNumber(day)}
+      {numberOfDay}
       {console.log('DAYYS messages', day, messages)}
+
+      {/* (function (rem) {
+  return rem.faction === "Rebels";
+}) */}
 
       {/* <Reminder /> */}
       {messages.map((rem) => (
@@ -47,10 +51,8 @@ const Day = ({
             date={rem.date}
             city={rem.city}
             color={rem.color}
+            time={rem.time}
           />
-          {/* <Button variant="primary" onClick={handleShow}>
-            +
-          </Button> */}
         </div>
       ))}
     </div>

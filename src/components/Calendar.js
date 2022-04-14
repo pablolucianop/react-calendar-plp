@@ -58,7 +58,7 @@ function Calendar() {
           </div>
         </div>
       </div>
-      <ModalComponent test={'test'} show={show} />
+      <ModalComponent test={'test'} show={show} setShow={setShow} />
       <Button variant="primary" onClick={handleShow}>
         +
       </Button>
