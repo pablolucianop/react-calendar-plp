@@ -36,7 +36,7 @@ const Day = ({
         `}
       onClick={handleShow}
     >
-      {numberOfDay}
+      <div className="number-of-day">{numberOfDay}</div>
       {console.log('DAYYS messages', day, messages)}
 
       {/* (function (rem) {
