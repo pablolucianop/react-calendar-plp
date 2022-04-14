@@ -34,6 +34,7 @@ const Day = ({
                  ${isWeekend && 'gray-background'}
                  ${isWeekend & isThisMonth ? 'accent-Color-text' : ''}
                  ${!isThisMonth && 'disabled-text'}
+                 ${show && isTheMainDay && 'main-day'}
         `}
       onClick={handleShow}
     >
