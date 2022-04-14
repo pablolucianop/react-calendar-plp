@@ -46,9 +46,10 @@ const Day = ({
   }
 
   function compareToDay(a) {
-    if (a !== undefined && a.city === numberOfDay.toString()) {
-      return true // jsToDate(a) === jsToDate(day)
-    }
+    return true
+    // if (a !== undefined && a.city === numberOfDay.toString()) {
+    //   return true // jsToDate(a) === jsToDate(day)
+    // }
   }
 
   const result = messages.filter(compareToDay)

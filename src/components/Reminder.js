@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import './Reminder.css'
-
+import Weather from './Weather'
 const Reminder = ({
   city,
   reminderText,
@@ -22,13 +22,15 @@ const Reminder = ({
       <div>{reminderText}</div>
       <div>{date}</div>
       <div>{time}</div>
-      <div>{city}</div>
+      <div>
+        {city} <Weather city={city} />
+      </div>
     </div>
   )
 
   const reminderSmall = (
     <div>
-      {time} {reminderText}
+      {time} {reminderText} <Weather />
     </div>
   )
 
