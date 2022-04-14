@@ -25,7 +25,10 @@ const Weather = () => {
       icon = (
         <img
           src={`http://openweathermap.org/img/w/${iconcode}.png`}
-          alt="Weather icon"
+          alt={`${mainWeatherData}`}
+          style={{
+            width: '25%',
+          }}
         ></img>
       )
       console.log('data', data)
