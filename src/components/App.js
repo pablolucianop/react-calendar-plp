@@ -47,7 +47,7 @@ const messageReducer = (state = initialState, action) => {
 }
 
 const store = createStore(messageReducer)
-store.dispatch({ type: 'ADD', message: 'hola' })
+// store.dispatch({ type: 'ADD', message: '' })
 
 function App() {
   const calendar = <Calendar />

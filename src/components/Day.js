@@ -29,7 +29,7 @@ const Day = ({
   const numberOfDay = getDayNumber(day)
 
   const handleDayClick = () => {
-    dispatch({ type: 'SELECT', selected: 'remi' })
+    dispatch({ type: 'SELECT', selected: day })
     handleShow()
   }
 
