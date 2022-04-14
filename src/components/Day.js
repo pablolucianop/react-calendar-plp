@@ -16,6 +16,7 @@ const Day = ({
   handleShow,
   show,
   isTheMainDay,
+  dispatch,
 }) => {
   const getWeatherFromCityInDate = async (city, date) => {
     const response = await fetch(
@@ -28,6 +29,7 @@ const Day = ({
   const numberOfDay = getDayNumber(day)
 
   const handleDayClick = () => {
+    dispatch({ type: 'SELECT', selected: 'remi' })
     handleShow()
   }
 
@@ -69,7 +71,7 @@ const Day = ({
   )
 }
 const mapStateToProps = (state) => {
-  return { messages: state.reminders }
+  return { messages: state.reminders, interactions: state.interactions }
 }
 
 export default connect(mapStateToProps)(Day)
