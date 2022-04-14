@@ -56,9 +56,9 @@ function ModalComponent(props) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      {/* <Button variant="primary" onClick={handleShow}>
         +
-      </Button>
+      </Button> */}
       <Modal show={show} onHide={handleClose}>
         <ReminderEditor> </ReminderEditor>
         <Day> </Day>

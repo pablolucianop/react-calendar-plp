@@ -47,9 +47,9 @@ const Day = ({
             city={rem.city}
             color={rem.color}
           />
-          <Button variant="primary" onClick={handleShow}>
+          {/* <Button variant="primary" onClick={handleShow}>
             +
-          </Button>
+          </Button> */}
         </div>
       ))}
     </div>

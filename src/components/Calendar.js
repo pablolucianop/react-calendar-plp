@@ -59,6 +59,9 @@ function Calendar() {
         </div>
       </div>
       <ModalComponent test={'test'} show={show} />
+      <Button variant="primary" onClick={handleShow}>
+        +
+      </Button>
       {/* <ReminderEditor test={'test'} /> */}
     </div>
   )
