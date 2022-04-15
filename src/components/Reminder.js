@@ -20,7 +20,7 @@ const Reminder = ({
 
   const handleRemimderClick = () => {
     handleShow()
-    dispatch({ type: 'SELECT', selectedReminder: city })
+    dispatch({ type: 'SELECTREMINDER', selectedReminder: key })
     console.log('selectedReminder: key', key)
   }
 
