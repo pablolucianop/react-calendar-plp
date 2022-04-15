@@ -91,7 +91,7 @@ function ReminderEditor({ dispatch, messages, setShow, interactions }) {
   const defaultReminder = {
     text: '',
     city: '',
-    date: '',
+    date: '12:00',
     time: '',
   }
 
