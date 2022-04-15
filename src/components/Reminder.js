@@ -36,10 +36,7 @@ const Reminder = ({
         <CloseButton className="close-button" onClick={handleSubstract} />
       </div>
       <div>{date}</div>
-      <div>
-        {time}
-        {keyReminder}
-      </div>
+      <div>{time}</div>
       <div>
         {city} {city !== '' && <Weather city={city} date={date} />}
       </div>
@@ -48,7 +45,8 @@ const Reminder = ({
 
   const reminderSmall = (
     <div className={'reminderSmall'}>
-      {time} {reminderText} {city !== '' && <Weather city={city} date={date} />}
+      {time} {reminderText} {city}{' '}
+      {city !== '' && <Weather city={city} date={date} />}
     </div>
   )
 
