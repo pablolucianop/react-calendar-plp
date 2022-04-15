@@ -35,7 +35,7 @@ const Reminder = ({
   )
 
   const reminderSmall = (
-    <div>
+    <div className={'reminderSmall'}>
       {time} {reminderText} <Weather city={city} />
     </div>
   )

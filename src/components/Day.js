@@ -52,6 +52,10 @@ const Day = ({
     }
   }
 
+  const jsToDate22 = (jsDate) => {
+    return new Date(jsDate).toISOString().split('T')[0]
+  }
+
   function sameDay(a) {
     if (a !== undefined && jsDateToDdMmYyyy(a.date) === jsDateToDdMmYyyy(day)) {
       return true // jsToDate(a) === jsToDate(day)

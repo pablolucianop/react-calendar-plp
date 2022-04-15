@@ -26,7 +26,7 @@ const Weather = () => {
           src={`http://openweathermap.org/img/w/${iconcode}.png`}
           alt={`${mainWeatherData}`}
           style={{
-            width: 'clamp(1rem, 25%, 47px)',
+            width: 'clamp(2rem, 25%, 47px)',
           }}
         ></img>
       )
