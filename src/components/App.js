@@ -59,13 +59,14 @@ const messageReducer = (state = initialState, action) => {
         interactions: [...state.interactions],
       }
     case SELECT:
+      console.log('stateRos', state)
       return {
         reminders: [...state.reminders],
         selectedReminder: state.selectedReminder,
         interactions: [...state.interactions, action.selected],
       }
     case SELECTREMINDER:
-      console.log('state', state)
+      console.log('stateRos', state)
       return {
         reminders: [...state.reminders],
         selectedReminder: action.selectedReminder,
