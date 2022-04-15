@@ -55,7 +55,11 @@ const Reminder = ({
 }
 
 const mapStateToProps = (state) => {
-  return { messages: state.reminders, interactions: state.interactions }
+  return {
+    messages: state.reminders,
+    interactions: state.interactions,
+    selectedReminder: state.selectedReminder,
+  }
 }
 
 export default connect(mapStateToProps)(Reminder)

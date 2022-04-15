@@ -37,6 +37,15 @@ const Day = ({
     handleShow()
   }
 
+  function jsDateToDdMmYyyy(jsDate) {
+    const day = new Date(jsDate).toISOString().split('T')[0].substring(8, 10)
+    const month = new Date().getMonth() + 1
+    const year = new Date().getFullYear()
+    return `${year}-${month}-${day}`
+  }
+  const string = 'Thu Apr 14 2022 22:59:18 GMT-0300 (hora estándar de Argentina'
+  console.log('hhh frand', jsDateToDdMmYyyy(string))
+
   function compareToDay(a) {
     if (a !== undefined && a.date.substring(8, 10) === numberOfDay.toString()) {
       return true // jsToDate(a) === jsToDate(day)
@@ -75,7 +84,6 @@ const Day = ({
           key={rem.key}
           handleShow={handleShow}
         />
-        // </div>
       ))}
       {show && isTheMainDay && (
         <Button variant="primary" size="sm" className="buttonInDay">

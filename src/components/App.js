@@ -41,6 +41,7 @@ const selectReminder = (selectedReminder) => {
 const initialState = {
   reminders: [],
   interactions: [],
+  selectedReminder: '',
 }
 
 const messageReducer = (state = initialState, action) => {
@@ -48,6 +49,7 @@ const messageReducer = (state = initialState, action) => {
     case ADD:
       return {
         reminders: [...state.reminders, action.message],
+        selectedReminder: state.selectedReminder,
         interactions: [...state.interactions],
       }
     case SUBSTRACT:
