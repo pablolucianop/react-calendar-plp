@@ -77,9 +77,8 @@ const Weather = ({ city, date }) => {
 
   return (
     <div>
-      {/* {iconWeather} */}
+      {iconWeather !== undefined ? icon : ''}
       {/* {specificWeather} */}
-      {icon}{' '}
     </div>
   )
 }
