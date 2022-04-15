@@ -7,6 +7,8 @@ const Weather = ({ city, date }) => {
   const [state, setState] = useState({
     serverResponse: '',
   })
+  const [specificWeather, setSpecificWeather] = useState()
+  const [iconWeather, setIconWeather] = useState()
 
   useEffect(() => {
     async function fetchData() {
@@ -32,9 +34,13 @@ const Weather = ({ city, date }) => {
       console.log('date rrr', date)
       console.log('res: ', res)
 
-      const resultin = res.data.list.filter(isInRange)
-      console.log('resultin: ', resultin)
-
+      const weatherInRange = res.data.list.filter(isInRange)
+      console.log('weatherInRange: ', weatherInRange)
+      console.log('weatherInRange: ', weatherInRange)
+      const mainWeatherData = weatherInRange[0].weather[0].main
+      setSpecificWeather(mainWeatherData)
+      setIconWeather(weatherInRange[0].weather[0].icon)
+      console.log('mainWeatherData33w: ', weatherInRange[0].weather[0].icon)
       function isInRange(obj) {
         const weatherData = new Date(obj.dt_txt).getTime()
         const dayInQuestion = new Date(date).getTime()
@@ -55,20 +61,26 @@ const Weather = ({ city, date }) => {
       // const { data } = await res
       // mainWeatherData = data.weather[0].main
       // iconcode = data.weather[0].icon
-      // icon = (
-      //   <img
-      //     src={`http://openweathermap.org/img/w/${iconcode}.png`}
-      //     alt={`${mainWeatherData}`}
-      //     style={{
-      //       width: 'clamp(2rem, 25%, 47px)',
-      //     }}
-      //   ></img>
-      // )
+      icon = (
+        <img
+          src={`http://openweathermap.org/img/w/${iconWeather}.png`}
+          alt={`${specificWeather}`}
+          style={{
+            width: 'clamp(2rem, 25%, 47px)',
+          }}
+        ></img>
+      )
     }
     fetchData()
-  }, [city])
+  }, [city, iconWeather])
 
-  return <div>{/* <div>{icon}</div> */}</div>
+  return (
+    <div>
+      {/* {iconWeather} */}
+      {specificWeather}
+      {icon}{' '}
+    </div>
+  )
 }
 
 export default Weather

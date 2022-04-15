@@ -39,7 +39,17 @@ const addElementSL = (selectedReminder) => {
 }
 
 const initialState = {
-  reminders: [],
+  reminders: [
+    // {
+    //   color: '',
+    //   reminderText: ' ',
+    //   city: '',
+    //   date: '',
+    //   time: '12:00',
+    //   key: 'reminder-0',
+    //   dateJs: '',
+    // },
+  ],
   interactions: [],
   selectedReminder: '',
 }
