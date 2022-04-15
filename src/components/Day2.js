@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button'
 
 const Day2 = ({ day, handleShow, dispatch }) => {
   const handleDayClick = () => {
-    dispatch({ type: 'SELECT', selected: day })
+    dispatch({ type: 'SELECTREMINDER', selectedReminder: day })
     handleShow()
   }
 

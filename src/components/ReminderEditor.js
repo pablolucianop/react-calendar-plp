@@ -78,8 +78,14 @@ function ReminderEditor({ dispatch, messages, setShow, interactions }) {
     time: '',
   }
 
+  function isValidDate(d) {
+    return d instanceof Date && !isNaN(d)
+  }
+
   const jsToDate = (jsDate) => {
-    return new Date(jsDate).toISOString().split('T')[0]
+    if (isValidDate(jsDate)) {
+      return new Date(jsDate).toISOString().split('T')[0]
+    }
   }
 
   const selectedFormatedDay = jsToDate(interactions[interactions.length - 1])
