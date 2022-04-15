@@ -6,8 +6,9 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { CirclePicker } from 'react-color'
 import { format, parseISO } from 'date-fns'
+import { getDayNumber } from '../utils/date-fnsInfo'
 
-function ReminderEditor({ dispatch, messages, setShow }) {
+function ReminderEditor({ dispatch, messages, setShow, interactions }) {
   const [color, setColor] = useState('')
   const [reminderText, setReminderText] = useState('')
   const [city, setCity] = useState('')
@@ -94,6 +95,14 @@ function ReminderEditor({ dispatch, messages, setShow }) {
     time: '',
   }
 
+  const jsToDate = (jsDate) => {
+    return new Date(jsDate).toISOString().split('T')[0]
+  }
+
+  const selectedFormatedDay = jsToDate(interactions[interactions.length - 1])
+
+  console.log('interact', interactions)
+
   return (
     <div className="reminder-editor">
       <Form.Group className="mb-3" controlId="formBasicReminder">
@@ -129,7 +138,7 @@ function ReminderEditor({ dispatch, messages, setShow }) {
         <Form.Label>Date and Time</Form.Label>
         <Form.Control
           type="date"
-          defaultValue={defaultReminder.date}
+          defaultValue={selectedFormatedDay} //{defaultReminder.date}
           onChange={(e) => setDate(e.target.value)}
         />
       </Form.Group>
