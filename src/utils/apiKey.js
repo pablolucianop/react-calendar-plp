@@ -1,1 +1,2 @@
-export const apiKey = '88311788ed96ee764097bb269c07c5f7'
+console.log(process.env)
+export const apiKey = `${process.env.REACT_APP_apykey}`

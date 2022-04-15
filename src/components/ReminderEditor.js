@@ -108,7 +108,7 @@ function ReminderEditor({
 
   return (
     <div className="reminder-editor">
-      <Form.Group className="mb-3" controlId="formBasicReminder">
+      <Form.Group className="mb-3" controlid="formBasicReminder">
         <Form.Label
           style={{
             backgroundColor: color,
@@ -126,14 +126,14 @@ function ReminderEditor({
           placeholder="Enter Reminder"
           maxLength="30"
           onChange={(e) => setReminderText(e.target.value)}
-          inputProps={{ 'data-testid': 'content-input' }}
+          inputprops={{ 'data-testid': 'content-input' }}
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formCity">
+      <Form.Group className="mb-3" controlid="formCity">
         <Form.Label>City</Form.Label>
         <Form.Control
           defaultValue={defaultValue.city}
-          inputProps={{ 'data-testid': 'content-input' }}
+          inputprops={{ 'data-testid': 'content-input' }}
           type="text"
           placeholder="Enter City"
           maxLength="30"
@@ -145,8 +145,8 @@ function ReminderEditor({
         <Form.Label>Date</Form.Label>
         <Form.Control
           data-testid="formDate"
-          controlId="formDate"
-          inputProps={{ 'data-testid': 'content-input' }}
+          controlid="formDate"
+          inputprops={{ 'data-testid': 'content-input' }}
           type="date"
           defaultValue={selectedFormatedDay}
           onChange={(e) => setDate(e.target.value)}
@@ -155,15 +155,15 @@ function ReminderEditor({
       <Form.Group className="mb-3" data-testid="formTimew">
         <Form.Label>Time</Form.Label>
         <Form.Control
-          controlId="formTime"
-          inputProps={{ 'data-testid': 'content-input' }}
+          controlid="formTime"
+          inputprops={{ 'data-testid': 'content-input' }}
           type="time"
           // placeholder="Enter City"
           defaultValue={defaultValue.time}
           onChange={(e) => setTime(e.target.value)}
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formColor">
+      <Form.Group className="mb-3" controlid="formColor">
         <Form.Label>Color</Form.Label>
 
         <CirclePicker
