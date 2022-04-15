@@ -31,7 +31,7 @@ function ReminderEditor({ dispatch, messages, setShow, interactions }) {
       color: color,
       reminderText: reminderText,
       city: city,
-      date: date,
+      date: selectedFormatedDay,
       time: time,
       jsDate: new Date(date + '-' + time),
     })
@@ -53,7 +53,7 @@ function ReminderEditor({ dispatch, messages, setShow, interactions }) {
       color: color,
       reminderText: reminderText,
       city: city,
-      date: date,
+      date: selectedFormatedDay,
       time: time,
       key: `reminder-${messages.length}`,
       dateJs: fromdt,

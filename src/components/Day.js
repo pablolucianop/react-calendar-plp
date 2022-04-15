@@ -52,6 +52,12 @@ const Day = ({
     }
   }
 
+  function sameDay(a) {
+    if (a !== undefined && jsDateToDdMmYyyy(a.date) === jsDateToDdMmYyyy(day)) {
+      return true // jsToDate(a) === jsToDate(day)
+    }
+  }
+
   const result = messages.filter(compareToDay)
 
   return (
