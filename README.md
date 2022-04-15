@@ -10,7 +10,11 @@ Simple react calendar with the feature to add reminders, build for challenge.
 
 - Local state on internal functions of components
 
-- If you specify the city, it adds a img of the weather in that zone!
+- Arranges reminders in the correct time order.
+
+- It gets the latitude and longitude of a city, cross reference the data with an openweather weather 5 days forecast of the area, and informs you with an icon 🌈!
+  With alt text for accessibility
+  (it only provides forecasts between the now and 5 days)
 
 - Handle overflow when multiple reminders appear on the same date.
 
