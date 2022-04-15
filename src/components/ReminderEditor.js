@@ -89,8 +89,8 @@ function ReminderEditor({ dispatch, messages, setShow, interactions }) {
   ]
 
   const defaultReminder = {
-    text: 'Add a reminder',
-    city: 'Add a city',
+    text: '',
+    city: '',
     date: '',
     time: '',
   }
