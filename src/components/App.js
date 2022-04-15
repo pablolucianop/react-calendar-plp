@@ -47,8 +47,12 @@ const initialState = {
 const messageReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD:
+      const added = [...state.reminders, action.message]
+      console.log('added: ', added)
+      const sortedReminders = added.sort((a, b) => a.time.localeCompare(b.time))
+
       return {
-        reminders: [...state.reminders, action.message],
+        reminders: sortedReminders,
         selectedReminder: state.selectedReminder,
         interactions: [...state.interactions],
       }
