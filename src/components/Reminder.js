@@ -18,6 +18,11 @@ const Reminder = ({
   const handleSubstract = () => {
     dispatch({ type: 'SUBSTRACT', key: keyReminder })
   }
+
+  const handleEdit = () => {
+    dispatch({ type: 'SELECTREMINDER', selectedReminder: keyReminder })
+  }
+
   console.log('Reminder: ', keyReminder)
   const handleRemimderClick = () => {
     handleShow()
@@ -25,7 +30,7 @@ const Reminder = ({
   }
 
   const reminderBig = (
-    <div>
+    <div onClick={handleEdit}>
       <div>
         {reminderText}{' '}
         <CloseButton className="close-button" onClick={handleSubstract} />

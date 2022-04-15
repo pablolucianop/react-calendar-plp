@@ -31,10 +31,10 @@ const addElement = (selected) => {
 }
 
 const SELECTREMINDER = 'SELECTREMINDER'
-const addElementSL = (selected) => {
+const addElementSL = (selectedReminder) => {
   return {
     type: SELECTREMINDER,
-    selected: selected,
+    selectedReminder: selectedReminder,
   }
 }
 
@@ -71,7 +71,7 @@ const messageReducer = (state = initialState, action) => {
       console.log('stateRos', state)
       return {
         reminders: [...state.reminders],
-        selectedReminder: [...state.selectedReminder, action.selectedReminder],
+        selectedReminder: action.selectedReminder,
         interactions: [...state.interactions],
       }
 
