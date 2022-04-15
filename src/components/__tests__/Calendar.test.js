@@ -1,6 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Calendar from './Calendar'
+// import Week from './Week'
+// import ReminderEditor from './ReminderEditor'
+// import ModalComponent from './ModalComponent'
+// import Reminder from './Reminder'
+// import AddReminder from './AddReminder'
+// import Button from 'react-bootstrap/Button'
+// import { connect } from 'react-redux'
+// import {
+//     getDays,
+//     getDayNumber,
+//     getWeekDays,
+//     getWeeks,
+// } from '../utils/date-fnsInfo'
+// import {
+//     getWeatherFromCityInDate,
+//     getWeatherFromCity,
+//     getWeatherFromCityInRange,
+
+//     getWeatherFromCityInRangeWithDate,
+// } from '../utils/weather-fnsInfo'
+
 import { fireEvent, render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
@@ -11,11 +32,11 @@ describe('Calendar', () => {
     ReactDOM.unmountComponentAtNode(div)
   })
 
-  it('should add a reminder with default data', () => {
+  it('should create a reminder including day, time and city', () => {
     const { getByTestId, getByText } = render(<Calendar />)
 
     // Click add reminder button
-    fireEvent.click(getByText('Add reminder'))
+    fireEvent.click(screen.getByTextId('Add reminder'))
 
     // Confirm the reminder
     fireEvent.click(getByText('Add'))

@@ -12,11 +12,6 @@ const now = new Date()
 const getDayNumber = (date = now) => formatFn(date, 'd')
 const getMonthNumber = (date = now) => formatFn(date, 'm')
 
-//create a js date of today
-const month = new Date().getMonth() + 1
-const year = new Date().getFullYear()
-console.log('month', month)
-console.log('year', year)
 const getDays = (date = now) =>
   eachDayOfInterval({
     start: startOfWeek(date),

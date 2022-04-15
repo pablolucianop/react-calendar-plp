@@ -1,9 +1,6 @@
-import React, { useCallback, useState } from 'react'
 import { getDayNumber } from '../utils/date-fnsInfo'
-import ReminderEditor from './ReminderEditor'
 import './Day.css'
 import { connect } from 'react-redux'
-import AddReminder from './AddReminder'
 import Reminder from './Reminder.js'
 import Button from 'react-bootstrap/Button'
 
@@ -18,25 +15,11 @@ const Day = ({
   isTheMainDay,
   dispatch,
 }) => {
-  const getWeatherFromCityInDate = async (city, date) => {
-    const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}&units=imperial&date=${date}`
-    )
-    const data = await response.json()
-    return data
-  }
-
   function add(str) {
     return str.toString().length === 1 ? (str = '0' + str) : str
   }
   const numberOfDay = getDayNumber(day)
   const numberOfMonth = add(day.getMonth() + 1)
-
-  console.log('numberOfMonth', numberOfMonth)
-
-  const jsToDate = (jsDate) => {
-    return new Date(jsDate).toISOString().split('T')[0]
-  }
 
   const handleDayClick = () => {
     dispatch({ type: 'SELECT', selected: day })
@@ -50,7 +33,6 @@ const Day = ({
     return `${year}-${month}-${day}`
   }
   const string = 'Thu Apr 14 2022 22:59:18 GMT-0300 (hora estándar de Argentina'
-  console.log('hhh frand', jsDateToDdMmYyyy(string))
 
   function compareToDay(a) {
     if (a !== undefined) {
@@ -61,22 +43,10 @@ const Day = ({
       const numberOfDayOfComponent = numberOfDay
       const aD = `${numberOfMonthOfComponent}-${numberOfDayOfComponent}`
       const bD = `${numberOfMonthOfArray}-${numberOfDayOfArray}`
-      console.log('eeew', bD, aD)
 
-      console.log('numberOfMonthOfArray', numberOfMonthOfArray)
       if (bD === aD) {
         return true
       }
-    }
-  }
-
-  const jsToDate22 = (jsDate) => {
-    return new Date(jsDate).toISOString().split('T')[0]
-  }
-
-  function sameDay(a) {
-    if (a !== undefined && jsDateToDdMmYyyy(a.date) === jsDateToDdMmYyyy(day)) {
-      return true // jsToDate(a) === jsToDate(day)
     }
   }
 

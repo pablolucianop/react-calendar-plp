@@ -13,7 +13,6 @@ const Weather = ({ city, date }) => {
 
   useEffect(() => {
     async function fetchData() {
-      console.log('Weather: ', city)
       const latLong = await axios
         .get(
           `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`
@@ -24,8 +23,6 @@ const Weather = ({ city, date }) => {
 
       const lat = latLong.data[0].lat
       const lon = latLong.data[0].lon
-
-      console.log('latLong: ', latLong.data[0].lat)
 
       const res = await axios
         .get(
@@ -49,8 +46,6 @@ const Weather = ({ city, date }) => {
           weatherData - acceptedMargin < dayInQuestion
         )
       }
-
-      let iconcode
     }
     fetchData()
   }, [city, iconWeather, date])
@@ -60,7 +55,7 @@ const Weather = ({ city, date }) => {
       src={`http://openweathermap.org/img/w/${iconWeather}.png`}
       alt={`${specificWeather}`}
       style={{
-        width: 'clamp(2rem, 25%, 47px)',
+        width: 'clamp(1rem, 15%, 47px)',
       }}
     ></img>
   )

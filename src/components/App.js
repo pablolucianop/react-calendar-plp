@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css'
 import Calendar from './Calendar'
-import Weather from './Weather'
 import { Provider, connect } from 'react-redux'
 import { createStore } from 'redux'
 
@@ -64,7 +63,6 @@ const messageReducer = (state = initialState, action) => {
         ),
       ]
       const added = [...filtered, action.message]
-      console.log('added: ', added)
       const sortedReminders = added.sort((a, b) => a.time.localeCompare(b.time))
 
       return {
@@ -81,14 +79,12 @@ const messageReducer = (state = initialState, action) => {
         interactions: [...state.interactions],
       }
     case SELECT:
-      console.log('stateRos', state)
       return {
         reminders: [...state.reminders],
         selectedReminder: state.selectedReminder,
         interactions: [...state.interactions, action.selected],
       }
     case SELECTREMINDER:
-      console.log('stateRos', state)
       return {
         reminders: [...state.reminders],
         selectedReminder: action.selectedReminder,

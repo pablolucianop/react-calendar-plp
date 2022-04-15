@@ -1,15 +1,8 @@
 import React, { useMemo, useState } from 'react'
-import Button from 'react-bootstrap/Button'
 import './Calendar.css'
-import ReminderEditor from './ReminderEditor'
 import ModalComponent from './ModalComponent'
 
-import {
-  getDays,
-  getDayNumber,
-  getWeekDays,
-  getWeeks,
-} from '../utils/date-fnsInfo'
+import { getWeekDays, getWeeks } from '../utils/date-fnsInfo'
 import Week from './Week'
 import axios from 'axios'
 
@@ -21,14 +14,6 @@ function Calendar() {
   const date = now
   const weekDays = getWeekDays()
   const weeks = useMemo(() => getWeeks(date), [date])
-
-  const getResponse = async () => {
-    try {
-      const response = await axios.get('url')
-    } catch (err) {
-      console.log('err')
-    }
-  }
 
   return (
     <div className="calendar">
@@ -55,10 +40,6 @@ function Calendar() {
         </div>
       </div>
       <ModalComponent test={'test'} show={show} setShow={setShow} />
-      <Button variant="primary" onClick={handleShow}>
-        +
-      </Button>
-      {/* <ReminderEditor test={'test'} /> */}
     </div>
   )
 }

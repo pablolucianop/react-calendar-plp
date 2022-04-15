@@ -23,10 +23,8 @@ const Reminder = ({
     dispatch({ type: 'SELECTREMINDER', selectedReminder: keyReminder })
   }
 
-  console.log('Reminder: ', keyReminder)
   const handleRemimderClick = () => {
     handleShow()
-    // dispatch({ type: 'SELECTREMINDER', selectedReminder: key })
   }
 
   const reminderBig = (

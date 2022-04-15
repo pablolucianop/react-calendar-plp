@@ -3,12 +3,7 @@ import { isSameDay, isSameMonth, isWeekend } from 'date-fns'
 import './Week.css'
 import Day from './Day'
 
-import {
-  getDays,
-  getDayNumber,
-  getWeekDays,
-  getWeeks,
-} from '../utils/date-fnsInfo'
+import { getDays } from '../utils/date-fnsInfo'
 
 const Week = ({ date, week, handleShow, show }) => {
   const days = useMemo(() => getDays(week), [week])
@@ -29,17 +24,6 @@ const Week = ({ date, week, handleShow, show }) => {
           show={show}
         />
       ))}
-
-      {/* <Day2
-        key={days[0]}
-        day={days[0]}
-        date={date}
-        isWeekend={isWeekend(days[0])}
-        isToday={isSameDay(days[0], now)}
-        isThisMonth={isSameMonth(days[0], date)}
-        handleShow={handleShow}
-        show={show}
-      /> */}
     </div>
   )
 }

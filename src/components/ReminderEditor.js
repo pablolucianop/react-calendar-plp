@@ -3,10 +3,7 @@ import './ReminderEditor.css'
 import { connect } from 'react-redux'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
 import { CirclePicker } from 'react-color'
-import { format, parseISO } from 'date-fns'
-import { getDayNumber } from '../utils/date-fnsInfo'
 
 function ReminderEditor({
   dispatch,
@@ -27,10 +24,7 @@ function ReminderEditor({
     setShow(false)
     dispatch({ type: 'SELECTREMINDER', selectedReminder: '' })
   }
-  const handleDispa = (e) => {
-    e.preventDefault()
-  }
-  const handleShow = () => setShow(true)
+
   const handleAdd = (e) => {
     e.preventDefault()
 
@@ -78,15 +72,6 @@ function ReminderEditor({
     '#ffc107',
   ]
 
-  const defaultReminder = {
-    text: '',
-    city: '',
-    date: '12:00',
-    time: '',
-  }
-
-  console.log('messages stateRos', messages)
-
   const reminderSelectedObj = messages.filter((message) => {
     return message.key === selectedReminder
   })
@@ -108,8 +93,6 @@ function ReminderEditor({
   }
 
   const defaultValue = objPlaceholder(reminderSelectedObj)
-
-  console.log('reminderSelectedObj stateRos', reminderSelectedObj)
 
   function isValidDate(d) {
     return d instanceof Date && !isNaN(d)

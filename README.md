@@ -30,9 +30,9 @@ Simple react calendar with the feature to add reminders, build for challenge.
 
 - Open weather APi
 
-### Demo
+### Demo!
 
--
+- https://calendar-plp.herokuapp.com/
 
 ### License
 
