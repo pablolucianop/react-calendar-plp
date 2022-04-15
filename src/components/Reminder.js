@@ -48,7 +48,7 @@ const Reminder = ({
 
   const reminderSmall = (
     <div className={'reminderSmall'}>
-      {time} {reminderText} {city !== '' && <Weather city={city} />}
+      {time} {reminderText} {city !== '' && <Weather city={city} date={date} />}
     </div>
   )
 

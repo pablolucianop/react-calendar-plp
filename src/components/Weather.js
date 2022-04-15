@@ -31,6 +31,24 @@ const Weather = ({ city, date }) => {
       console.log(res.data.list[0].weather[0].main)
       console.log('date rrr', date)
       console.log('res: ', res)
+
+      const resultin = res.data.list.filter(isInRange)
+      console.log('resultin: ', resultin)
+
+      function isInRange(obj) {
+        const weatherData = new Date(obj.dt_txt).getTime()
+        const dayInQuestion = new Date(date).getTime()
+        console.log(weatherData, dayInQuestion)
+        console.log(weatherData - dayInQuestion)
+        const secondsInHour = 3600000 * 2
+        const acceptedMargin = secondsInHour
+
+        return (
+          acceptedMargin + weatherData > dayInQuestion &&
+          weatherData - acceptedMargin < dayInQuestion
+        )
+      }
+
       let iconcode
 
       // let mainWeatherData
