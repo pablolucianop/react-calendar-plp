@@ -19,6 +19,7 @@ function ModalComponent({ show, setShow, messages, dispatch, interactions }) {
 
   const handleClose = (e) => {
     setShow(false)
+    dispatch({ type: 'SELECTREMINDER', selectedReminder: '' })
   }
   const handleDispa = (e) => {
     e.preventDefault()
@@ -75,7 +76,11 @@ function ModalComponent({ show, setShow, messages, dispatch, interactions }) {
 }
 
 const mapStateToProps = (state) => {
-  return { messages: state.reminders, interactions: state.interactions }
+  return {
+    messages: state.reminders,
+    interactions: state.interactions,
+    selectedReminder: state.selectedReminder,
+  }
 }
 
 export default connect(mapStateToProps)(ModalComponent)

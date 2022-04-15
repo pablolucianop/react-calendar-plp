@@ -25,6 +25,7 @@ function ReminderEditor({
   const handleClose = (e) => {
     e.preventDefault()
     setShow(false)
+    dispatch({ type: 'SELECTREMINDER', selectedReminder: '' })
   }
   const handleDispa = (e) => {
     e.preventDefault()

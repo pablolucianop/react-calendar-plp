@@ -44,7 +44,7 @@ const Reminder = ({
   )
 
   const reminderSmall = (
-    <div className={'reminderSmall'}>
+    <div className={'reminderSmall'} onClick={handleEdit}>
       {time} {reminderText} {city}{' '}
       {city !== '' && <Weather city={city} date={date} />}
     </div>
