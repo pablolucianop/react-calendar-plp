@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { isSameDay, isSameMonth, isWeekend } from 'date-fns'
 import './Week.css'
 import Day from './Day'
-import Day2 from './Day2'
+
 import {
   getDays,
   getDayNumber,

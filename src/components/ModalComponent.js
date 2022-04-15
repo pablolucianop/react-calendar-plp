@@ -63,9 +63,9 @@ function ModalComponent({ show, setShow, messages, dispatch, interactions }) {
           key={day}
           day={day}
           date={date}
-          isWeekend={isWeekend(day)}
-          isToday={isSameDay(day, now)}
-          isThisMonth={isSameMonth(day, date)}
+          // isWeekend={isWeekend(day)}
+          // isToday={isSameDay(day, now)}
+          // isThisMonth={isSameMonth(day, date)}
           handleShow={handleShow}
           show={show}
         />
