@@ -131,30 +131,38 @@ function ReminderEditor({
         <Form.Label>City</Form.Label>
         <Form.Control
           defaultValue={defaultValue.city}
+          inputProps={{ 'data-testid': 'content-input' }}
+          // data-testid="formCity"
           type="text"
           placeholder="Enter City"
           maxLength="30"
           onChange={(e) => setCity(e.target.value)}
+          data-testid="formCity"
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formCity">
-        <Form.Label>Date and Time</Form.Label>
+      <Form.Group className="mb-3">
+        <Form.Label>Date</Form.Label>
         <Form.Control
+          data-testid="formDate"
+          controlId="formDate"
+          inputProps={{ 'data-testid': 'content-input' }}
           type="date"
-          defaultValue={selectedFormatedDay} //{defaultReminder.date}
+          defaultValue={selectedFormatedDay}
           onChange={(e) => setDate(e.target.value)}
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formCity">
-        <Form.Label>Date and Time</Form.Label>
+      <Form.Group className="mb-3" data-testid="formTimew">
+        <Form.Label>Time</Form.Label>
         <Form.Control
+          controlId="formTime"
+          inputProps={{ 'data-testid': 'content-input' }}
           type="time"
           // placeholder="Enter City"
           defaultValue={defaultValue.time}
           onChange={(e) => setTime(e.target.value)}
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formCity">
+      <Form.Group className="mb-3" controlId="formColor">
         <Form.Label>Color</Form.Label>
 
         <CirclePicker
@@ -166,13 +174,18 @@ function ReminderEditor({
           }}
         />
       </Form.Group>
-      <Button variant="primary" type="Add" onClick={handleAdd}>
+      <Button
+        variant="primary"
+        type="Add"
+        onClick={handleAdd}
+        id={'addBtn'}
+        data-testid="addBtn"
+      >
         Add
       </Button>{' '}
       <Button variant="secondary" type="Cancel" onClick={handleClose}>
         Cancel
       </Button>
-      {/* </Form> */}
     </div>
   )
 }
