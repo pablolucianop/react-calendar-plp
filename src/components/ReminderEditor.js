@@ -88,7 +88,25 @@ function ReminderEditor({
 
   const reminderSelectedObj = messages.filter((message) => {
     return message.key === selectedReminder
-  })[0]
+  })
+
+  function objPlaceholder(reminderSelectedObj) {
+    if (reminderSelectedObj[0] === undefined) {
+      return {
+        color: '',
+        reminderText: 'e',
+        city: '',
+        date: '',
+        time: '',
+        key: '',
+        dateJs: '',
+      }
+    } else {
+      return reminderSelectedObj[0]
+    }
+  }
+
+  const placeholder = objPlaceholder(reminderSelectedObj)
 
   console.log('reminderSelectedObj stateRos', reminderSelectedObj)
 
@@ -118,7 +136,7 @@ function ReminderEditor({
           Reminder
         </Form.Label>
         <Form.Control
-          defaultValue={defaultReminder.text}
+          defaultValue={placeholder.reminderText}
           type="text"
           placeholder="Enter Reminder"
           maxLength="30"
