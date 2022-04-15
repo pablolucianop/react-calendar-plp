@@ -55,7 +55,7 @@ const Weather = ({ city, date }) => {
       src={`http://openweathermap.org/img/w/${iconWeather}.png`}
       alt={`${specificWeather}`}
       style={{
-        width: 'clamp(1rem, 15%, 47px)',
+        width: 'clamp(1.7rem, 15%, 47px)',
       }}
     ></img>
   )

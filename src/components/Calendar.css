@@ -17,4 +17,10 @@
   .calendar {
     width: 100%;
   }
+  .day-of-week {
+    font-size: 11px;
+    overflow: hidden;
+    padding: 2px;
+    margin: 2px;
+  }
 }
