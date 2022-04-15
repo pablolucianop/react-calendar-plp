@@ -95,7 +95,7 @@ function ReminderEditor({
     if (reminderSelectedObj[0] === undefined) {
       return {
         color: '',
-        reminderText: 'e',
+        reminderText: '',
         city: '',
         date: '',
         time: '',
@@ -107,7 +107,7 @@ function ReminderEditor({
     }
   }
 
-  const placeholder = objPlaceholder(reminderSelectedObj)
+  const defaultValue = objPlaceholder(reminderSelectedObj)
 
   console.log('reminderSelectedObj stateRos', reminderSelectedObj)
 
@@ -137,7 +137,7 @@ function ReminderEditor({
           Reminder
         </Form.Label>
         <Form.Control
-          defaultValue={placeholder.reminderText}
+          defaultValue={defaultValue.reminderText}
           type="text"
           placeholder="Enter Reminder"
           maxLength="30"
@@ -147,7 +147,7 @@ function ReminderEditor({
       <Form.Group className="mb-3" controlId="formCity">
         <Form.Label>City</Form.Label>
         <Form.Control
-          defaultValue={defaultReminder.city}
+          defaultValue={defaultValue.city}
           type="text"
           placeholder="Enter City"
           maxLength="30"
@@ -167,7 +167,7 @@ function ReminderEditor({
         <Form.Control
           type="time"
           // placeholder="Enter City"
-          defaultValue={defaultReminder.time}
+          defaultValue={defaultValue.time}
           onChange={(e) => setTime(e.target.value)}
         />
       </Form.Group>
@@ -175,6 +175,7 @@ function ReminderEditor({
         <Form.Label>Color</Form.Label>
 
         <CirclePicker
+          defaultValue={defaultValue.color}
           color={color}
           colors={colors}
           onChangeComplete={(color) => {

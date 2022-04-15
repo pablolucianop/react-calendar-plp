@@ -57,7 +57,13 @@ const initialState = {
 const messageReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD:
-      const added = [...state.reminders, action.message]
+      //filter if the reminder already exists
+      const filtered = [
+        ...state.reminders.filter(
+          (reminder) => reminder.key !== state.selectedReminder
+        ),
+      ]
+      const added = [...filtered, action.message]
       console.log('added: ', added)
       const sortedReminders = added.sort((a, b) => a.time.localeCompare(b.time))
 
