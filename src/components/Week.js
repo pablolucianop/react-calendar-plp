@@ -16,7 +16,7 @@ const Week = ({ date, week, handleShow, show }) => {
   const now = new Date()
 
   return (
-    <div className="columns7">
+    <div className="columns7 columns7borders">
       {days.map((day) => (
         <Day
           key={day}
