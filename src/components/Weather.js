@@ -61,23 +61,24 @@ const Weather = ({ city, date }) => {
       // const { data } = await res
       // mainWeatherData = data.weather[0].main
       // iconcode = data.weather[0].icon
-      icon = (
-        <img
-          src={`http://openweathermap.org/img/w/${iconWeather}.png`}
-          alt={`${specificWeather}`}
-          style={{
-            width: 'clamp(2rem, 25%, 47px)',
-          }}
-        ></img>
-      )
     }
     fetchData()
-  }, [city, iconWeather])
+  }, [city, iconWeather, date])
+
+  icon = (
+    <img
+      src={`http://openweathermap.org/img/w/${iconWeather}.png`}
+      alt={`${specificWeather}`}
+      style={{
+        width: 'clamp(2rem, 25%, 47px)',
+      }}
+    ></img>
+  )
 
   return (
     <div>
       {/* {iconWeather} */}
-      {specificWeather}
+      {/* {specificWeather} */}
       {icon}{' '}
     </div>
   )
