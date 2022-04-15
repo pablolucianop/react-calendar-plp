@@ -90,12 +90,13 @@ const Day = ({
                  ${isWeekend & isThisMonth ? 'accent-Color-text' : ''}
                  ${!isThisMonth && 'disabled-text'}
                  ${show && isTheMainDay && 'main-day'}
+                 ${show && isTheMainDay && 'extra-height'}
         `}
       onClick={handleDayClick}
     >
       <div
         className={`number-of-day
-       ${show && isTheMainDay && 'abled-text'}`}
+       ${show && isTheMainDay && 'abled-text'}'}`}
       >
         {numberOfDay}
       </div>
