@@ -26,7 +26,13 @@ const Day = ({
     return data
   }
 
+  function add(str) {
+    return str.toString().length === 1 ? (str = '0' + str) : str
+  }
   const numberOfDay = getDayNumber(day)
+  const numberOfMonth = add(day.getMonth() + 1)
+
+  console.log('numberOfMonth', numberOfMonth)
 
   const jsToDate = (jsDate) => {
     return new Date(jsDate).toISOString().split('T')[0]
@@ -47,8 +53,20 @@ const Day = ({
   console.log('hhh frand', jsDateToDdMmYyyy(string))
 
   function compareToDay(a) {
-    if (a !== undefined && a.date.substring(8, 10) === numberOfDay.toString()) {
-      return true // jsToDate(a) === jsToDate(day)
+    if (a !== undefined) {
+      const numberOfDayOfArray = a.date.substring(8, 10)
+      const numberOfMonthOfArray = a.date.substring(5, 7)
+
+      const numberOfMonthOfComponent = numberOfMonth
+      const numberOfDayOfComponent = numberOfDay
+      const aD = `${numberOfMonthOfComponent}-${numberOfDayOfComponent}`
+      const bD = `${numberOfMonthOfArray}-${numberOfDayOfArray}`
+      console.log('eeew', bD, aD)
+
+      console.log('numberOfMonthOfArray', numberOfMonthOfArray)
+      if (bD === aD) {
+        return true
+      }
     }
   }
 
