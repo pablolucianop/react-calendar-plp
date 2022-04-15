@@ -91,7 +91,7 @@ const Day = ({
           time={rem.time}
           show={show}
           isTheMainDay={isTheMainDay}
-          key={rem.key}
+          keyReminder={rem.key}
           handleShow={handleShow}
         />
       ))}

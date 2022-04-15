@@ -30,7 +30,7 @@ const Week = ({ date, week, handleShow, show }) => {
         />
       ))}
 
-      <Day2
+      {/* <Day2
         key={days[0]}
         day={days[0]}
         date={date}
@@ -39,7 +39,7 @@ const Week = ({ date, week, handleShow, show }) => {
         isThisMonth={isSameMonth(days[0], date)}
         handleShow={handleShow}
         show={show}
-      />
+      /> */}
     </div>
   )
 }

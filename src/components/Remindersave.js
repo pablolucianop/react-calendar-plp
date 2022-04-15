@@ -11,13 +11,13 @@ const Reminder = ({
   show,
   isTheMainDay,
   dispatch,
-  keyReminder,
+  key,
   handleShow,
 }) => {
   const handleSubstract = () => {
     dispatch({ type: 'SUBSTRACT', key: `reminder-1` })
   }
-  console.log('Reminder: ', keyReminder)
+
   const handleRemimderClick = () => {
     handleShow()
     // dispatch({ type: 'SELECTREMINDER', selectedReminder: key })
@@ -27,10 +27,7 @@ const Reminder = ({
     <div onClick={handleSubstract}>
       <div>{reminderText}</div>
       <div>{date}</div>
-      <div>
-        {time}
-        {keyReminder}
-      </div>
+      <div>{time}</div>
       <div>
         {city} <Weather city={city} />
       </div>
