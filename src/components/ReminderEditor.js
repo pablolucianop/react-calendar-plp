@@ -8,7 +8,13 @@ import { CirclePicker } from 'react-color'
 import { format, parseISO } from 'date-fns'
 import { getDayNumber } from '../utils/date-fnsInfo'
 
-function ReminderEditor({ dispatch, messages, setShow, interactions }) {
+function ReminderEditor({
+  dispatch,
+  messages,
+  setShow,
+  interactions,
+  selectedReminder,
+}) {
   const [color, setColor] = useState('')
   const [reminderText, setReminderText] = useState('')
   const [city, setCity] = useState('')
@@ -77,6 +83,14 @@ function ReminderEditor({ dispatch, messages, setShow, interactions }) {
     date: '12:00',
     time: '',
   }
+
+  console.log('messages stateRos', messages)
+
+  const reminderSelectedObj = messages.filter((message) => {
+    return message.key === selectedReminder
+  })[0]
+
+  console.log('reminderSelectedObj stateRos', reminderSelectedObj)
 
   function isValidDate(d) {
     return d instanceof Date && !isNaN(d)
@@ -161,7 +175,11 @@ function ReminderEditor({ dispatch, messages, setShow, interactions }) {
 }
 
 const mapStateToProps = (state) => {
-  return { messages: state.reminders, interactions: state.interactions }
+  return {
+    messages: state.reminders,
+    interactions: state.interactions,
+    selectedReminder: state.selectedReminder,
+  }
 }
 
 export default connect(mapStateToProps)(ReminderEditor)
