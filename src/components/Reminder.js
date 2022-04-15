@@ -41,7 +41,7 @@ const Reminder = ({
         {keyReminder}
       </div>
       <div>
-        {city} {city !== '' && <Weather city={city} />}
+        {city} {city !== '' && <Weather city={city} date={date} />}
       </div>
     </div>
   )
