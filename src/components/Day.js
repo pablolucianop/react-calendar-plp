@@ -79,7 +79,12 @@ const Day = ({
         `}
       onClick={handleDayClick}
     >
-      <div className="number-of-day">{numberOfDay}</div>
+      <div
+        className={`number-of-day
+       ${show && isTheMainDay && 'abled-text'}`}
+      >
+        {numberOfDay}
+      </div>
 
       {result.map((rem) => (
         // <div className="-" key={rem.key}>
