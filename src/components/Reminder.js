@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import './Reminder.css'
 import Weather from './Weather'
+import CloseButton from 'react-bootstrap/CloseButton'
 const Reminder = ({
   city,
   reminderText,
@@ -15,7 +16,7 @@ const Reminder = ({
   handleShow,
 }) => {
   const handleSubstract = () => {
-    dispatch({ type: 'SUBSTRACT', key: `reminder-1` })
+    dispatch({ type: 'SUBSTRACT', key: keyReminder })
   }
   console.log('Reminder: ', keyReminder)
   const handleRemimderClick = () => {
@@ -24,8 +25,11 @@ const Reminder = ({
   }
 
   const reminderBig = (
-    <div onClick={handleSubstract}>
-      <div>{reminderText}</div>
+    <div>
+      <div>
+        {reminderText}{' '}
+        <CloseButton className="close-button" onClick={handleSubstract} />
+      </div>
       <div>{date}</div>
       <div>
         {time}
