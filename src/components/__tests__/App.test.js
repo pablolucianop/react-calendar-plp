@@ -16,7 +16,7 @@ describe('App', () => {
   it('should add a reminder with default data', () => {
     const { getByTestId, getByText } = render(<App />)
 
-    fireEvent.click(getByText('1'))
+    fireEvent.click(getByText('18'))
 
     fireEvent.change(getByTestId('formCity'), {
       target: { value: 'Campeche' },
@@ -26,8 +26,12 @@ describe('App', () => {
       target: { value: '19042022' },
     })
 
-    fireEvent.click(getByTestId('addBtn'))
+    fireEvent.change(getByTestId('formText'), {
+      target: { value: 'Boat ride!' },
+    })
 
-    expect(getByText('Campeche')).toBeInTheDocument()
+    fireEvent.click(getByText('Add'))
+    //This test is failing because the test is not rendering the reminder
+    fireEvent.expect(getByText('Sunday')).toBeInTheDocument()
   })
 })

@@ -120,11 +120,13 @@ function ReminderEditor({
           Reminder
         </Form.Label>
         <Form.Control
+          data-testid="formText"
           defaultValue={defaultValue.reminderText}
           type="text"
           placeholder="Enter Reminder"
           maxLength="30"
           onChange={(e) => setReminderText(e.target.value)}
+          inputProps={{ 'data-testid': 'content-input' }}
         />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formCity">
@@ -132,7 +134,6 @@ function ReminderEditor({
         <Form.Control
           defaultValue={defaultValue.city}
           inputProps={{ 'data-testid': 'content-input' }}
-          // data-testid="formCity"
           type="text"
           placeholder="Enter City"
           maxLength="30"
@@ -178,7 +179,6 @@ function ReminderEditor({
         variant="primary"
         type="Add"
         onClick={handleAdd}
-        id={'addBtn'}
         data-testid="addBtn"
       >
         Add
