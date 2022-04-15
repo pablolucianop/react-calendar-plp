@@ -93,6 +93,7 @@ const Day = ({
           isTheMainDay={isTheMainDay}
           keyReminder={rem.key}
           handleShow={handleShow}
+          key={rem.key}
         />
       ))}
       {show && isTheMainDay && (
