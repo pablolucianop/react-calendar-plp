@@ -37,8 +37,6 @@ function ReminderEditor({ dispatch, messages, setShow, interactions }) {
     })
 
     let dateStr = `${date} ${time}`
-    //function that create a js date from a string in the format dd-mm-yyyy hh:mm using date-fns
-    console.log('dateStrwwww', dateStr)
     var d = dateStr
     var d1 = d.split(' ')
     var dateFormat = d1[0].split('-')
@@ -50,9 +48,6 @@ function ReminderEditor({ dispatch, messages, setShow, interactions }) {
     var min = timeFormat[1]
 
     var fromdt = new Date(yy, mm - 1, dd, hh, min)
-
-    console.log('fromdt', fromdt)
-    console.log(`reminder-${messages.length}`)
 
     const remi = {
       color: color,
@@ -70,22 +65,10 @@ function ReminderEditor({ dispatch, messages, setShow, interactions }) {
   const colors = [
     '#f44336',
     '#e91e63',
-    // '#9c27b0',
-    // '#673ab7',
-    // '#3f51b5',
-    // '#2196f3',
     '#03a9f4',
-    // '#00bcd4',
-    // '#009688',
-    // '#4caf50',
     '#8bc34a',
     '#cddc39',
-    // '#ffeb3b',
     '#ffc107',
-    // '#ff9800',
-    // '#ff5722',
-    // '#795548',
-    // '#607d8b',
   ]
 
   const defaultReminder = {
@@ -100,8 +83,6 @@ function ReminderEditor({ dispatch, messages, setShow, interactions }) {
   }
 
   const selectedFormatedDay = jsToDate(interactions[interactions.length - 1])
-
-  console.log('interact', interactions)
 
   return (
     <div className="reminder-editor">

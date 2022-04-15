@@ -18,7 +18,6 @@ function ModalComponent({ show, setShow, messages, dispatch, interactions }) {
   const [recodatory, setRecordatory] = useState({})
 
   const handleClose = (e) => {
-    console.log('setShow', setShow)
     setShow(false)
   }
   const handleDispa = (e) => {
@@ -49,10 +48,6 @@ function ModalComponent({ show, setShow, messages, dispatch, interactions }) {
     dispatch({ type: 'ADD', message: remi })
     handleClose(e)
   }
-
-  // const day = new Date(
-  //   'Sun Apr 03 2022 00:00:00 GMT-0300 (hora estándar de Argentina)'
-  // )
 
   const day = interactions[interactions.length - 1]
 

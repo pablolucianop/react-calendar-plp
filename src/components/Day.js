@@ -35,38 +35,15 @@ const Day = ({
   const handleDayClick = () => {
     dispatch({ type: 'SELECT', selected: day })
     handleShow()
-    // console.log('333 ///////')
-    // console.log('333 day', day)
-    // console.log('333 jsToDate', jsToDate(day))
-    // console.log('333 messages[0].jsDate', messages[0].dateJs)
-    // console.log(
-    //   '333 jsToDate(messages[0].dateJs)',
-    //   jsToDate(messages[0].dateJs)
-    // )
   }
 
   function compareToDay(a) {
-    // return true
     if (a !== undefined && a.date.substring(8, 10) === numberOfDay.toString()) {
       return true // jsToDate(a) === jsToDate(day)
     }
   }
 
   const result = messages.filter(compareToDay)
-  console.log('333 result', result)
-  // function checkSameDay(reminderDay) {
-  //   if (typeof messages[0] != 'undefined') {
-  //     console.log('messages', messages[0])
-
-  //     const ee = new Date().toISOString().split(reminderDay)[0].substring(0, 10)
-  //     console.log('ee', ee)
-  //     const ee2 = new Date().toISOString().split(day)[0].substring(0, 10)
-  //     console.log('ee2', ee2)
-  //     return ee === ee2
-  //   }
-  // }
-
-  // const result = messages.filter(checkSameDay)
 
   return (
     <div
@@ -87,7 +64,6 @@ const Day = ({
       </div>
 
       {result.map((rem) => (
-        // <div className="-" key={rem.key}>
         <Reminder
           reminderText={rem.reminderText}
           date={rem.date}
@@ -102,12 +78,7 @@ const Day = ({
         // </div>
       ))}
       {show && isTheMainDay && (
-        <Button
-          variant="primary"
-          size="sm"
-          className="buttonInDay"
-          //  onClick={handleShow}
-        >
+        <Button variant="primary" size="sm" className="buttonInDay">
           +
         </Button>
       )}

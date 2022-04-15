@@ -29,11 +29,6 @@ function Calendar() {
       console.log('err')
     }
   }
-  console.log(getResponse)
-
-  //pro.openweathermap.org/data/2.5/forecast/climate?lat={lat}&lon={lon}&appid={API key}
-  //pro.openweathermap.org/data/2.5/forecast/climate?q=Rosario&appid=88311788ed96ee764097bb269c07c5f7
-  //api.openweathermap.org/data/2.5/weather?q=Rosario&units=imperial&appid=88311788ed96ee764097bb269c07c5f7
 
   return (
     <div className="calendar">

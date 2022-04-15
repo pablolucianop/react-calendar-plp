@@ -43,8 +43,6 @@ const initialState = {
   interactions: [],
 }
 
-// [...state, action.message]
-
 const messageReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD:
@@ -53,14 +51,12 @@ const messageReducer = (state = initialState, action) => {
         interactions: [...state.interactions],
       }
     case SUBSTRACT:
-      console.log('action.key', action.key)
       return {
         reminders: [],
         selectedReminder: state.selectedReminder,
         interactions: [...state.interactions],
       }
     case SELECT:
-      console.log('state', state)
       return {
         reminders: [...state.reminders],
         selectedReminder: state.selectedReminder,
@@ -79,7 +75,6 @@ const messageReducer = (state = initialState, action) => {
 }
 
 const store = createStore(messageReducer)
-// store.dispatch({ type: 'ADD', message: '' })
 
 function App() {
   const calendar = <Calendar />
