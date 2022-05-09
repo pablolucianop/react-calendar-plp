@@ -36,14 +36,18 @@ const Day = ({
 
   function compareToDay(a) {
     if (a !== undefined) {
-      const numberOfDayOfArray = a.date.substring(8, 10)
+      let numberOfDayOfArray = a.date.substring(8, 10)
+      // if (a.date !== undefined) {
+      //   numberOfDayOfArray = getDayNumber(a.date)
+      // }
       const numberOfMonthOfArray = a.date.substring(5, 7)
 
       const numberOfMonthOfComponent = numberOfMonth
-      const numberOfDayOfComponent = numberOfDay
+      const numberOfDayOfComponent = day.toString().substring(8, 10)
       const aD = `${numberOfMonthOfComponent}-${numberOfDayOfComponent}`
       const bD = `${numberOfMonthOfArray}-${numberOfDayOfArray}`
-
+      // console.log('day', ' a.date', a.date, 'aD', aD, bD, bD === aD)
+      console.log('aD', numberOfDayOfComponent, aD, 'bD', bD)
       if (bD === aD) {
         return true
       }
@@ -51,6 +55,7 @@ const Day = ({
   }
 
   const result = messages.filter(compareToDay)
+  // console.log({ result })
 
   return (
     <div
